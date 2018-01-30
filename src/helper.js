@@ -1,6 +1,6 @@
  const cleanMovieData = (json, num) => {
   return {
-    scroll: json.films.results[0].opening_crawl,
+    scroll: json.films.results[0].opening_crawl.toUpperCase(),
     title: json.films.results[0].title,
     date: json.films.results[0].release_date
   };
