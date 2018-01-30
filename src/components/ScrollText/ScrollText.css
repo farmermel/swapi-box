@@ -1,7 +1,10 @@
+
+
 .movie-info {
   background-color: green; }
 
 .scroll-container {
+  font-family: 'legothickregular';
   background-color: #000;
   color: yellow;
   position: absolute;
@@ -11,7 +14,7 @@
   left: 50%;
   margin-left: -9em;
   font-size: 350%;
-  font-weight: bold;
+  /*font-weight: bold;*/
   text-align: justify;
   overflow: hidden;
   transform-origin: 50% 100%;
