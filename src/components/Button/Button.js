@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Button = ({name}) => {
+const Button = ({ name, selectCategory }) => {
   return (
-    <button>{name}</button>
+    <button onClick={() => selectCategory(name)}>{name}</button>
   )
 }
 
