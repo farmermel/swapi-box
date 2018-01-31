@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import './CardContainer.css';
 
 let cards;
 const createCards = data => {
@@ -11,11 +12,8 @@ const createCards = data => {
 
 const CardContainer = ({ cardData }) => {
   createCards(cardData)
-//   cardData.results
-//     ? createCards(cardData)
-//     : <div></div>
   return (
-    <div>
+    <div className='card-container'>
       {cards}
     </div>
   )
