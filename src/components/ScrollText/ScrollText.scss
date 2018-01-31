@@ -3,9 +3,11 @@
 }
 
 .scroll-container {
+  font-family: 'legothickregular';
   background-color: #000;
   color: yellow;
-  position: absolute;
+  // position: absolute;
+  position: relative;
   width: 18em;
   height: 350px;
   bottom: 0;

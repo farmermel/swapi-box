@@ -3,3 +3,13 @@
   src: url("../../assets/legothick-webfont.woff2") format("woff2"), url("../../assets/legothick-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+
+button {
+  border: none;
+  background-color: #000; }
+  button:hover {
+    background-color: yellow;
+    opacity: 0.6; }
+
+.App {
+  background-color: #000; }
