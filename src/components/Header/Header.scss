@@ -1,8 +1,67 @@
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 40px 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid black;
+  background-color: #4296ff;
+}
+
+nav button {
+  margin: 15px;
+  background-color: #4296ff;
+}
+
 .page-title {
   display: inline-block;
-  font-family: 'legothickregular';
+  color: yellow;
+  font-family: 'legothickregular', 'Luckiest Guy', cursive;
+  font-size: 5em;
 }
 
 .header-logo {
+  margin-top: 39px;
+  height: 108px;
+  width: 145px;
+}
+
+.people {
+  background-size: cover;
+  width: 86px;
+  height: 70px;
+  background-image: url('../../assets/lego-people.png')
+}
+
+.planets {
+  background-size: cover;
   width: 70px;
+  height: 70px;
+  background-image: url('../../assets/lego-death-star.png');
+}
+
+.vehicles {
+  background-size: cover;
+  width: 110px;
+  height: 70px;
+  background-image: url('../../assets/lego-ship.png');
+}
+
+.favorites {
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  background-image: url('../../assets/lego-heart.png')
 }
