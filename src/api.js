@@ -9,8 +9,8 @@ export default {
   getMovie(number) {
     console.log(`here's movie ${number}`)
   },
-  getData(type) {
-    return apiGet(`${root}/people/`)
+  getData(category) {
+    // return apiGet(`${root}/${category}/`)
 
   }
 }

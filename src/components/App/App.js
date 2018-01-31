@@ -12,7 +12,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieData: {}
+      movieData: {},
+      cardData: []
     }
   }
 
@@ -24,9 +25,10 @@ class App extends Component {
       // .then(json => this.cleanData(json));
 
     const movieData = dataCleaner.cleanMovieData(mockData, 4)
-    // api.getData()
+    // const cardData = api.getData('people')
+    const cardData = dataCleaner.cleanCardData(mockData.people.results)
     //get people
-    this.setState({ movieData })
+    this.setState({ movieData, cardData })
   }
 
   getMovie(movieNum) {
@@ -34,21 +36,29 @@ class App extends Component {
   }
 
   randomizeFilmScroll() {
-    const lastMovieNum = 8
+    const lastMovieNum = 8;
     return Math.ceil(Math.random() * lastMovieNum);
   }
 
+  handleSelectCategory = (category) => {
+    console.log(`clicked ${category}`)
+    //make apicall to category selected
+    //api.getData(category)
+  }
+
   render() {
-    console.log(this.state.movieData)
     return (
       <div className="App">
-        <Header />
+        <Header selectCategory={this.handleSelectCategory}/>
         <div>
-          <Button name='people'/>
-          <Button name='planets'/>
-          <Button name='vehicles'/>
+          <Button name='People'
+                  selectCategory={this.handleSelectCategory} />
+          <Button name='Planets'
+                  selectCategory={this.handleSelectCategory} />
+          <Button name='Vehicles'
+                  selectCategory={this.handleSelectCategory} />
         </div>
-        <CardContainer />
+        <CardContainer cardData={ this.state.cardData } />
         <ScrollText movieData={ this.state.movieData } />
       </div>
     );

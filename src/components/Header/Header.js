@@ -1,11 +1,19 @@
 import React from 'react';
 import Button from '../Button/Button';
+import './Header.css';
+import yoda from '../../assets/yoda.png';
 
-const Header = () => {
+const Header = ({ selectCategory }) => {
   return (
     <div>
-      <h1>Star Wars Facts</h1>
-      <Button name='favorites'/>
+      <div>
+        <h1 className='page-title'>LEGO STAR WARS</h1>
+        <img src={ yoda } 
+             alt='lego yoda'
+             className='header-logo' />
+      </div>
+      <Button name='favorites'
+              selectCategory={ selectCategory }/>
     </div>
   )
 }
