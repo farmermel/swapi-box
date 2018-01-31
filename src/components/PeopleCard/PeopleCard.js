@@ -1,9 +1,9 @@
 import React from 'react';
-import './Card.css';
+import './PeopleCard.css';
 
-const Card = ({ data }) => {
+const PeopleCard = ({ data }) => {
   return (
-    <div className='card'>
+    <div className='card people-card'>
       <h3>Name: { data.name }</h3>
       <p>Species: { data.species }</p>
       <p>Homeworld: { data.homeworld }</p>
@@ -15,4 +15,4 @@ const Card = ({ data }) => {
   )
 }
 
-export default Card;
+export default PeopleCard;

@@ -1,14 +1,25 @@
+$yellow: #edcd00;
+$orange: #ff7535;
+$purple: #784b9f;
+
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: yellow;
   width: 180px;
   height: 300px;
   padding: 20px 10px;
-  margin: 5px 40px;
+  margin: 5px 40px 20px;
+}
+
+.people-card {
+  background-color: $yellow;
+  border: 6px outset #ffeb3b;
+  &:hover {
+    border: 6px inset #ffeb3b;
+  }
 }
 
 .card p {
@@ -19,12 +30,12 @@
 .bump,
 .bump-bottom {
   position: absolute;
-  width: 10px;
+  width: 13px;
   height: 40px;
-  // z-index: 2;
-  left: -10px;
+  left: -19px;
+  border: inherit;
+  border-right: none;
   background-color: inherit;
-  // background-color: green;
 }
 
 .bump-bottom {

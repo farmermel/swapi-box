@@ -2,7 +2,12 @@ const root = 'https://swapi.co/api';
 
 const apiGet = async (url) => {
   const initialFetch = await fetch(url)
-  return await initialFetch.json()
+
+  if(initialFetch.status <= 200) {
+    return await initialFetch.json()
+  } else {
+    throw(new Error('Error retrieving Star Wars facts'))
+  }
 }
 
 const cleanMovieData = (movie) => {
@@ -42,27 +47,43 @@ const fetchPeopleDetails = (peopleArray) => {
     let species = await apiGet(person.species)
     return {...person, homeworld, species}
   })
-
 }
 
-// async componentDidMount () {
-//   const initialFetch = await fetch('http://localhost:3001/api/frontend-staff')
-//   const { bio } = await initialFetch.json()
-//   const staff = await this.fetchBios(bio)
-//   this.setState({ staff })
-// }
+const cleanPlanetData = (planets) => {
+  return planets.map( planet => {
+    return planet = {
+      name: planet.name,
+      terrain: planet.terrain,
+      population: planet.population,
+      climate: planet.climate,
+      residents: planet.residents
+    }
+  })
+}
 
-// fetchBios(arrayOfBios) {
-//   const unresolvedPromises = arrayOfBios.map(async (staffMember) => {
-//     let initialFetch = await fetch(staffMember.info)
-//     let bio = await initialFetch.json()
-//     return {...staffMember, ...bio}
-//   })
-//   return Promise.all(unresolvedPromises)
-// }
+const fetchPlanets = async () => {
+  const { results } = await apiGet(`${root}/planets/`)
+  const getResidents = await fetchResidents(results)
+  const planets = await Promise.all(getResidents)
+  return cleanPlanetData(planets)
+}
 
+const fetchResidents = (planetArray) => {
+  return planetArray.map( async (planet) => {
+    let peoplePromises = await planet.residents.map( async person => {
+      const resident = await apiGet(person)
+      return resident
+    })
+    const residents = await Promise.all(peoplePromises)
+    return {...planet, residents}
+  })
+}
 
 export default {
+  apiGet,
+  cleanMovieData,
+  cleanPeopleData,
   fetchMovie,
-  fetchPeople
+  fetchPeople,
+  fetchPlanets
 }

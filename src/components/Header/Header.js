@@ -8,10 +8,11 @@ import yoda from '../../assets/yoda.png';
 const Header = ({ getPeople, getPlanets, getVehicles, getFavs}) => {
   return (
     <div className='header'>
-      <div className='page-header'>
-        <img src={ lego }
+    <img src={ lego }
              alt='lego brand'
-             className='header-logo' />
+             className='header-logo logo' />
+      <div className='page-header'>
+        
         <h1 className='page-title'>STAR WARS</h1>
         <img src={ yoda } 
              alt='lego yoda'
