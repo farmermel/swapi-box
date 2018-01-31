@@ -4,11 +4,16 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: yellow;
   width: 180px;
   height: 300px;
   padding: 20px 10px;
-  margin: 5px 40px; }
+  margin: 5px 40px 20px; }
+
+.people-card {
+  background-color: #edcd00;
+  border: 6px outset #ffeb3b; }
+  .people-card:hover {
+    border: 6px inset #ffeb3b; }
 
 .card p {
   height: 30px; }
@@ -17,9 +22,11 @@
 .bump,
 .bump-bottom {
   position: absolute;
-  width: 10px;
+  width: 13px;
   height: 40px;
-  left: -10px;
+  left: -19px;
+  border: inherit;
+  border-right: none;
   background-color: inherit; }
 
 .bump-bottom {
