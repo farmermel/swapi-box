@@ -1,11 +1,16 @@
 import React from 'react';
+import './Card.css';
 
 const Card = ({ data }) => {
   return (
-    <div>
-      <h3>{ data.name }</h3>
-      <p>{ data.species }</p>
-      <p>{ data.homeworld }</p>
+    <div className='card'>
+      <h3>Name: { data.name }</h3>
+      <p>Species: { data.species }</p>
+      <p>Homeworld: { data.homeworld }</p>
+      <p>Homeworld Population: { data.homeworldPop }</p>
+      <div className='bump-top'></div>
+      <div className='bump'></div>
+      <div className='bump-bottom'></div>
     </div>
   )
 }
