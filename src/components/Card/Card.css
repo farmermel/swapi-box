@@ -1,0 +1,29 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: yellow;
+  width: 180px;
+  height: 300px;
+  padding: 20px 10px;
+  margin: 5px 40px; }
+
+.card p {
+  height: 30px; }
+
+.bump-top,
+.bump,
+.bump-bottom {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  left: -10px;
+  background-color: inherit; }
+
+.bump-bottom {
+  top: 250px; }
+
+.bump-top {
+  top: 50px; }
