@@ -5,7 +5,7 @@ import './Header.css';
 import lego from '../../assets/lego.svg';
 import yoda from '../../assets/yoda.png';
 
-const Header = ({ getPeople, getPlanets, getVehicles, getFavs}) => {
+const Header = ({ getPlanets, getVehicles }) => {
   return (
     <div className='header'>
     <img src={ lego }
@@ -20,7 +20,7 @@ const Header = ({ getPeople, getPlanets, getVehicles, getFavs}) => {
       </div>
       <nav>
         <Link to={ {pathname: '/people'} }
-              onClick={ getPeople }>
+              activeClassName='active'>
           <button className='people'>
           </button>
         </Link>
@@ -34,8 +34,7 @@ const Header = ({ getPeople, getPlanets, getVehicles, getFavs}) => {
           <button className='vehicles'>
           </button>
           </Link>
-        <Link to={ {pathname: '/favorites'} }
-              onClick={ getFavs }>
+        <Link to={ {pathname: '/favorites'} }>
           <button className='favorites'>
           </button>
         </Link>
