@@ -1,13 +1,18 @@
 const root = 'https://swapi.co/api';
 
 const apiGet = async (url) => {
-  const initialFetch = await fetch(url)
-
-  if(initialFetch.status <= 200) {
+  try {
+    const initialFetch = await fetch(url)
     return await initialFetch.json()
-  } else {
-    throw(new Error('Error retrieving Star Wars facts'))
+  } catch (e) {
+    throw e
+
+    // throw new Error('Error retrieving Star Wars facts')
   }
+
+  // if(initialFetch.status <= 200) {
+  // } else {
+  // }
 }
 
 const cleanMovieData = (movie) => {

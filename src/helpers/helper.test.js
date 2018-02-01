@@ -30,14 +30,14 @@ describe('swapiData', () => {
     })
 
     it('returns an error if status is above 200', async () => {
-    //   window.fetch = jest.fn().mockImplementation( (url) => {
-    //     return Promise.reject({
-    //       status: () => throw(new Error('Error'))
-    //     })
-    //   })
-    //   await swapiData.apiGet('people')
-    //   await expect(window.fetch).toThrowError()
-    //   window.fetch.mockClear()
+      window.fetch = jest.fn().mockImplementation( (url) => {
+        return Promise.reject({
+          status: () => throw new Error('Error')
+        })
+      })
+      await swapiData.apiGet('people')
+      await expect(window.fetch).toThrowError()
+      window.fetch.mockClear()
     })
   })
 
@@ -65,11 +65,10 @@ describe('swapiData', () => {
   describe('fetchMovie', () => {
     it('calls apiGet with url ending in number fetchMovie is passed', async () => {
       mockDataType = mockData.films.results[0];
-      
+
       expect(swapiData.apiGet).not.toHaveBeenCalled();
       await swapiData.fetchMovie(7);
       expect(swapiData.apiGet).toHaveBeenCalled();
-
     })
 
     it('calls cleanMovieData with results', () => {
