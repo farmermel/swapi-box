@@ -9,10 +9,10 @@ const residentDisplay = (people) => {
 }
 
 const PlanetCard = ({ data }) => {
-  console.log(data)
   residentDisplay(data.residents)
   return (
     <div className='card planet-card'>
+      <button className='favorites'></button>
       <h1>{data.name}</h1>
       <p>{data.terrain}</p>
       <p>{data.population}</p>

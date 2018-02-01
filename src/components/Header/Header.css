@@ -18,8 +18,16 @@ nav {
   background-color: #4296ff; }
 
 nav button {
+  border: none;
   margin: 15px;
-  background-color: #4296ff; }
+  background-color: #4296ff;
+  border: none; }
+  nav button:hover {
+    background-color: yellow;
+    opacity: 0.6; }
+
+.active {
+  background-color: magenta; }
 
 .page-title {
   display: inline-block;

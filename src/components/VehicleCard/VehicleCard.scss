@@ -1,0 +1,17 @@
+$purple: #784b9f;
+$border-purple: #806697;
+
+.vehicle-card {
+  background-color: $purple;
+  border: 6px outset $border-purple;
+  &:hover {
+    border: 6px inset $border-purple;
+  }
+}
+
+.vehicle-card .favorites {
+  background-color: $purple;
+  border: none;
+  height: 35px;
+  width: 35px;
+}

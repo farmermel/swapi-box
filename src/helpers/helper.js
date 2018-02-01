@@ -18,7 +18,13 @@ const cleanMovieData = (movie) => {
   };
 }
 
-const fetchMovie = async (num) => {
+const randomizeFilmScroll = () => {
+  const lastMovieNum = 7;
+  return Math.ceil(Math.random() * lastMovieNum);
+}
+
+const fetchMovie = async () => {
+  const num = randomizeFilmScroll();
   const results = await apiGet(`${root}/films/${num}/`)
   return cleanMovieData(results)
 }
@@ -63,12 +69,12 @@ const cleanPlanetData = (planets) => {
 
 const fetchPlanets = async () => {
   const { results } = await apiGet(`${root}/planets/`)
-  const getResidents = await fetchResidents(results)
+  const getResidents = await fetchPlanetResidents(results)
   const planets = await Promise.all(getResidents)
   return cleanPlanetData(planets)
 }
 
-const fetchResidents = (planetArray) => {
+const fetchPlanetResidents = (planetArray) => {
   return planetArray.map( async (planet) => {
     let peoplePromises = await planet.residents.map( async person => {
       const resident = await apiGet(person)
@@ -79,11 +85,28 @@ const fetchResidents = (planetArray) => {
   })
 }
 
+const cleanVehicleData = (vehicles) => {
+  return vehicles.map( vehicle => {
+    return vehicle = {
+      name: vehicle.name,
+      model: vehicle.model,
+      class: vehicle.vehicle_class,
+      passengers: vehicle.passengers
+    }
+  })
+}
+
+const fetchVehicles = async () => {
+  const { results } = await apiGet(`${root}/vehicles/`)
+  return cleanVehicleData(results);
+} 
+
 export default {
   apiGet,
   cleanMovieData,
   cleanPeopleData,
   fetchMovie,
   fetchPeople,
-  fetchPlanets
+  fetchPlanets,
+  fetchVehicles
 }

@@ -1,9 +1,5 @@
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
   width: 180px;
   height: 300px;
   padding: 20px 10px;
@@ -14,6 +10,12 @@
   border: 6px outset #ffeb3b; }
   .people-card:hover {
     border: 6px inset #ffeb3b; }
+
+.people-card .favorites {
+  width: 35px;
+  height: 35px;
+  background-color: #edcd00;
+  border: none; }
 
 .card p {
   height: 30px; }
@@ -28,6 +30,9 @@
   border: inherit;
   border-right: none;
   background-color: inherit; }
+
+.bump {
+  top: 149px; }
 
 .bump-bottom {
   top: 250px; }

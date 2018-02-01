@@ -4,6 +4,7 @@ import './PeopleCard.css';
 const PeopleCard = ({ data }) => {
   return (
     <div className='card people-card'>
+      <button className='favorites'></button>
       <h3>Name: { data.name }</h3>
       <p>Species: { data.species }</p>
       <p>Homeworld: { data.homeworld }</p>

@@ -21,8 +21,18 @@ nav {
 }
 
 nav button {
+  border: none;
   margin: 15px;
   background-color: #4296ff;
+  border: none;
+  &:hover{
+    background-color: yellow;
+    opacity: 0.6;
+  }
+}
+
+.active {
+  background-color: magenta;
 }
 
 .page-title {
