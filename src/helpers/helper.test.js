@@ -23,7 +23,7 @@ describe('swapiData', () => {
   })
 
   describe('apiGet', () => {
-    it('makes a call to fetch if status is at or below 200', () => {
+    it('fetchs if status is at or below 200', () => {
       expect(window.fetch).not.toHaveBeenCalled()
       swapiData.apiGet('people')
       expect(window.fetch).toHaveBeenCalled()
@@ -65,6 +65,7 @@ describe('swapiData', () => {
   describe('fetchMovie', () => {
     it('calls apiGet with url ending in number fetchMovie is passed', async () => {
       mockDataType = mockData.films.results[0];
+      
       expect(swapiData.apiGet).not.toHaveBeenCalled();
       await swapiData.fetchMovie(7);
       expect(swapiData.apiGet).toHaveBeenCalled();

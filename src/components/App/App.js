@@ -19,7 +19,6 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    // const movieNum = this.randomizeFilmScroll();
     const movieData = await swapiData.fetchMovie();
     const peopleData = await swapiData.fetchPeople();
     this.setState({ movieData, peopleData });

@@ -1,3 +1,8 @@
 .card-container {
   display: flex;
   flex-wrap: wrap; }
+
+.loading-gif {
+  border: 1px solid cornflowerblue;
+  margin: auto;
+  width: 500px; }
