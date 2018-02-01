@@ -24,7 +24,6 @@ const createCards = (data, cardType) => {
 
 const CardContainer = ({ cardData, getData, cardType }) => {
   createCards(cardData, cardType)
-  console.log(cardData.length)
   return (
     <div className='card-container'>
       {!cardData.length && <img src={loading} 
