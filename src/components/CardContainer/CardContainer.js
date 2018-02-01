@@ -6,35 +6,23 @@ import FavoritesCard from '../FavoritesCard/FavoritesCard';
 import './CardContainer.css';
 
 let cards;
-const createPeopleCards = data => {
-  cards = data.map( card => {
-      return <PeopleCard data={card} />
-    })
+
+const cardTypes = {
+  PeopleCard: PeopleCard,
+  PlanetCard: PlanetCard,
+  VehicleCard: VehicleCard,
+  FavoritesCard: FavoritesCard
 }
 
-const createPlanetCards = data => {
+const createCards = (data, cardType) => {
+  let Type = cardTypes[cardType];
   cards = data.map( card => {
-      return <PlanetCard data={card} />
-    })
-}
-
-const createVehicleCards = data => {
-  cards = data.map( card => {
-      return <VehicleCard data={card} />
-    })
-}
-
-const createFavoritesCards = data => {
-  cards = data.map( card => {
-      return <FavoritesCard data={card} />
-    })
-}
+    return <Type data={card} />
+  })
+} 
 
 const CardContainer = ({ cardData, getData, cardType }) => {
-  cardType === 'PeopleCard' && createPeopleCards(cardData);
-  cardType === 'PlanetCard' && createPlanetCards(cardData);
-  cardType === 'VehicleCard' && createVehicleCards(cardData);
-  cardType === 'FavoritesCard' && createFavoritesCards(cardData);
+  createCards(cardData, cardType)
 
   return (
     <div className='card-container'>
