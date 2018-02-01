@@ -30,7 +30,7 @@ const createFavoritesCards = data => {
     })
 }
 
-const CardContainer = ({ cardData, getPeople, cardType }) => {
+const CardContainer = ({ cardData, getData, cardType }) => {
   cardType === 'PeopleCard' && createPeopleCards(cardData);
   cardType === 'PlanetCard' && createPlanetCards(cardData);
   cardType === 'VehicleCard' && createVehicleCards(cardData);
