@@ -4,9 +4,14 @@ $border-green: #51af55;
 .planet-card {
   background-color: $green;
   border: 6px inset $border-green;
-
   &:hover {
     border: 6px outset $border-green;
   }
+}
 
+.planet-card .favorites {
+  background-color: $green;
+  border: none;
+  height: 35px;
+  width: 35px;
 }

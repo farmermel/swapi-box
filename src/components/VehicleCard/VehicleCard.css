@@ -1,0 +1,11 @@
+.vehicle-card {
+  background-color: #784b9f;
+  border: 6px outset #806697; }
+  .vehicle-card:hover {
+    border: 6px inset #806697; }
+
+.vehicle-card .favorites {
+  background-color: #784b9f;
+  border: none;
+  height: 35px;
+  width: 35px; }
