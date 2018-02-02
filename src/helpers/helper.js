@@ -45,7 +45,8 @@ const cleanPeopleData = (people) => {
         species: person.species.name
       },
       favorite: false,
-      id: Date.now() + index
+      id: Date.now() + index,
+      type: 'peopleData'
     }
   })
 }
@@ -76,7 +77,8 @@ const cleanPlanetData = (planets) => {
         residents: planet.residents.length ? planet.residents : 'no residents'
       },
       favorite: false,
-      id: Date.now() + index
+      id: Date.now() + index,
+      type: 'planetData'
     }
   })
 }
@@ -109,7 +111,8 @@ const cleanVehicleData = (vehicles) => {
         passengers: vehicle.passengers
       },
       favorite: false,
-      id: Date.now() + index
+      id: Date.now() + index,
+      type: 'vehicleData'
     }
   })
 }

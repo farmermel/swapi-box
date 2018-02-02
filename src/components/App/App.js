@@ -40,18 +40,27 @@ class App extends Component {
     });
   }
 
-  toggleFav = (id, type) => {
-    let stateData = [...this.state[type]];
+  toggleFav = (cardData) => {
+    let stateData = [...this.state[cardData.type]];
     stateData.forEach( item => {
-      item.id === id 
+      item.id === cardData.id 
       ? item.favorite = !item.favorite 
       : item;
     })
-    this.setState({ [type]: stateData })
 
-    //also push into favs array. 
-    //type is available here, could maybe set that 
-    //just for favs?
+    let favorites = this.state.favorites
+    favorites = favorites.indexOf(cardData) === -1 
+    ? [...favorites, cardData]
+    : favorites.splice(favorites.indexOf(cardData))
+    // let favorites = [...this.state.favorites, cardData]
+
+    // let favorites = this.state.favorites.filter( fav => {
+
+    // })
+    this.setState({
+     [cardData.type]: stateData,
+     favorites
+    })
   }
 
   getFavs = () => {
