@@ -40,6 +40,20 @@ class App extends Component {
     });
   }
 
+  toggleFav = (id, type) => {
+    let stateData = [...this.state[type]];
+    stateData.forEach( item => {
+      item.id === id 
+      ? item.favorite = !item.favorite 
+      : item;
+    })
+    this.setState({ [type]: stateData })
+
+    //also push into favs array. 
+    //type is available here, could maybe set that 
+    //just for favs?
+  }
+
   getFavs = () => {
 
   }
@@ -53,22 +67,26 @@ class App extends Component {
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 
                            getData={ this.getPeople }
-                           cardType='people-card' />) }>
+                           cardType='peopleData' 
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/vehicles' render={ () => (
             <CardContainer cardData={ this.state.vehicleData } 
                            getData={ this.getVehicles }
-                           cardType='vehicle-card' />) }>
+                           cardType='vehicleData'
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/planets' render={ () => (
             <CardContainer cardData={ this.state.planetData } 
                            getData={ this.getPlanets } 
-                           cardType='planet-card'/>) }>
+                           cardType='planetData'
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/favorites' render={ () => (
             <CardContainer cardData={ this.state.favorites } 
                            getData={ this.getFavs } 
-                           cardType='FavoritesCard'/>) }>
+                           cardType='FavoritesCard'
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
         </Switch>
         <ScrollText movieData={ this.state.movieData } />
