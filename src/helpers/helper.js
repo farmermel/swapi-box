@@ -38,10 +38,12 @@ const fetchMovie = async () => {
 const cleanPeopleData = (people) => {
   return people.map( (person, index) => {
     return {
-      name: person.name,
-      homeworld: person.homeworld.name,
-      homeworldPop: person.homeworld.population,
-      species: person.species.name,
+      info: {
+        name: person.name,
+        homeworld: person.homeworld.name,
+        homeworldPop: person.homeworld.population,
+        species: person.species.name
+      },
       favorite: false,
       id: Date.now() + index
     }
@@ -66,11 +68,13 @@ const fetchPeopleDetails = (peopleArray) => {
 const cleanPlanetData = (planets) => {
   return planets.map( (planet, index) => {
     return {
-      name: planet.name,
-      terrain: planet.terrain,
-      population: planet.population,
-      climate: planet.climate,
-      residents: planet.residents,
+      info: {
+        name: planet.name,
+        terrain: planet.terrain,
+        population: planet.population,
+        climate: planet.climate,
+        residents: planet.residents.length ? planet.residents : 'no residents'
+      },
       favorite: false,
       id: Date.now() + index
     }
@@ -98,10 +102,12 @@ const fetchPlanetResidents = (planetArray) => {
 const cleanVehicleData = (vehicles) => {
   return vehicles.map( (vehicle, index) => {
     return {
-      name: vehicle.name,
-      model: vehicle.model,
-      class: vehicle.vehicle_class,
-      passengers: vehicle.passengers,
+      info: {
+        name: vehicle.name,
+        model: vehicle.model,
+        class: vehicle.vehicle_class,
+        passengers: vehicle.passengers
+      },
       favorite: false,
       id: Date.now() + index
     }

@@ -8,9 +8,7 @@ const cleanItem = (item, value) => {
 }
 
 const Card = ({ data, cardType, toggleFav }) => {
-  let dataDisplay = {...data}
-  delete dataDisplay.id && delete dataDisplay.favorite;
-  let displayItems = Object.entries(dataDisplay).map( item => {
+  let displayItems = Object.entries(data.info).map( item => {
     let value;
     typeof item[1] === 'object' 
       ? value = cleanItem(item[1], value) 
