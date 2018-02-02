@@ -17,10 +17,10 @@ const Card = ({ data, cardType, toggleFav }) => {
   })
 
   return (
-    <div className={`card ${cardType}`}>
+    <div className={`card ${data.type}`}>
       <button className='favorites'
               id={data.favorite ? 'favd' : undefined}
-              onClick={() => toggleFav(data.id, cardType)}></button>
+              onClick={() => toggleFav(data)}></button>
       { displayItems }
       <div className='bump-top'></div>
       <div className='bump'></div>
