@@ -24,10 +24,6 @@ class App extends Component {
     this.setState({ movieData, peopleData });
   }
 
-  // getPeople = () => {
-
-  // }
-
   getVehicles = async () => {
     const vehicleState = this.state.vehicleData;
     vehicleState.length === 0 
@@ -57,17 +53,17 @@ class App extends Component {
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 
                            getData={ this.getPeople }
-                           cardType='PeopleCard' />) }>
+                           cardType='people-card' />) }>
           </Route>
           <Route path='/vehicles' render={ () => (
             <CardContainer cardData={ this.state.vehicleData } 
                            getData={ this.getVehicles }
-                           cardType='VehicleCard' />) }>
+                           cardType='vehicle-card' />) }>
           </Route>
           <Route path='/planets' render={ () => (
             <CardContainer cardData={ this.state.planetData } 
                            getData={ this.getPlanets } 
-                           cardType='PlanetCard'/>) }>
+                           cardType='planet-card'/>) }>
           </Route>
           <Route path='/favorites' render={ () => (
             <CardContainer cardData={ this.state.favorites } 

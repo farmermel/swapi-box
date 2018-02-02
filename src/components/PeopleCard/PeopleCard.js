@@ -2,6 +2,7 @@ import React from 'react';
 import './PeopleCard.css';
 
 const PeopleCard = ({ data }) => {
+  console.log(Object.entries(data))
   return (
     <div className='card people-card'>
       <button className='favorites'></button>

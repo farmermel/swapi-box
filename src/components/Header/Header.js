@@ -19,8 +19,7 @@ const Header = ({ getPlanets, getVehicles }) => {
              className='header-logo' />
       </div>
       <nav>
-        <Link to={ {pathname: '/people'} }
-              activeClassName='active'>
+        <Link to={ {pathname: '/people'} }>
           <button className='people'>
           </button>
         </Link>
