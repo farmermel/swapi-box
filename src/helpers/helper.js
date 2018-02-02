@@ -1,3 +1,4 @@
+import apiGet from './api.js';
 const root = 'https://swapi.co/api';
 
 // const apiGet = async (url) => {
@@ -14,8 +15,6 @@ const root = 'https://swapi.co/api';
 //   // } else {
 //   // }
 // }
-
-import apiGet from './api.js';
 
 const cleanMovieData = (movie) => {
   return {
@@ -37,12 +36,14 @@ const fetchMovie = async () => {
 }
 
 const cleanPeopleData = (people) => {
-  return people.map( person => {
-    return person = {
+  return people.map( (person, index) => {
+    return {
       name: person.name,
       homeworld: person.homeworld.name,
       homeworldPop: person.homeworld.population,
-      species: person.species.name
+      species: person.species.name,
+      favorite: false,
+      id: Date.now() + index
     }
   })
 }
@@ -63,13 +64,15 @@ const fetchPeopleDetails = (peopleArray) => {
 }
 
 const cleanPlanetData = (planets) => {
-  return planets.map( planet => {
-    return planet = {
+  return planets.map( (planet, index) => {
+    return {
       name: planet.name,
       terrain: planet.terrain,
       population: planet.population,
       climate: planet.climate,
-      residents: planet.residents
+      residents: planet.residents,
+      favorite: false,
+      id: Date.now() + index
     }
   })
 }
@@ -93,12 +96,14 @@ const fetchPlanetResidents = (planetArray) => {
 }
 
 const cleanVehicleData = (vehicles) => {
-  return vehicles.map( vehicle => {
-    return vehicle = {
+  return vehicles.map( (vehicle, index) => {
+    return {
       name: vehicle.name,
       model: vehicle.model,
       class: vehicle.vehicle_class,
-      passengers: vehicle.passengers
+      passengers: vehicle.passengers,
+      favorite: false,
+      id: Date.now() + index
     }
   })
 }
