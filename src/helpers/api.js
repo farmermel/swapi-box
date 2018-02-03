@@ -4,15 +4,9 @@ const apiGet = async (url) => {
   try {
     const initialFetch = await fetch(url)
     return await initialFetch.json()
-  } catch (e) {
-    throw e
-
-    // throw new Error('Error retrieving Star Wars facts')
+  } catch (error) {
+    throw new Error(`Error retrieving Star Wars facts: ${error}`)
   }
-
-  // if(initialFetch.status <= 200) {
-  // } else {
-  // }
 }
 
 export default apiGet;
