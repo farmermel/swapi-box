@@ -49,26 +49,12 @@ class App extends Component {
     })
 
     let favorites = this.state.favorites
-    favorites = favorites.includes(cardData) 
-      ? console.log('true')
-      : [...favorites, cardData]
+    if(favorites.includes(cardData)) {
+      favorites.splice(favorites.indexOf(cardData))
+    } else {
+      favorites = [...favorites, cardData]
+    }
 
-    //check if in favorites array
-    //if it is remove it
-    //if it isn't add it
-    //then go to state for the type of card that it is
-    //and toggle that card's favorite status
-
-    // let favorites = this.state.favorites
-    // favorites = favorites.indexOf(cardData) === -1 
-    // ? [...favorites, cardData]
-    // : favorites.splice(favorites.indexOf(cardData))
-
-    favorites = [...favorites, cardData]
-
-    // let favorites = this.state.favorites.filter( fav => {
-
-    // })
     this.setState({
      [cardData.type]: stateData,
      favorites
