@@ -1,21 +1,6 @@
 import apiGet from './api.js';
 const root = 'https://swapi.co/api';
 
-// const apiGet = async (url) => {
-//   try {
-//     const initialFetch = await fetch(url)
-//     return await initialFetch.json()
-//   } catch (e) {
-//     throw e
-
-//     // throw new Error('Error retrieving Star Wars facts')
-//   }
-
-//   // if(initialFetch.status <= 200) {
-//   // } else {
-//   // }
-// }
-
 const cleanMovieData = (movie) => {
   return {
     scroll: movie.opening_crawl.toUpperCase(),
@@ -126,8 +111,12 @@ export default {
   apiGet,
   cleanMovieData,
   cleanPeopleData,
+  cleanPlanetData,
+  cleanVehicleData,
   fetchMovie,
   fetchPeople,
+  fetchPeopleDetails,
   fetchPlanets,
+  fetchPlanetResidents,
   fetchVehicles
 }
