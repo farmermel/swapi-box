@@ -16,8 +16,8 @@ const randomizeFilmScroll = () => {
 
 const fetchMovie = async () => {
   const num = randomizeFilmScroll();
-  const results = await apiGet(`${root}/films/${num}/`)
-  return cleanMovieData(results)
+  const results = await apiGet(`${root}/films/${num}/`);
+  return cleanMovieData(results);
 }
 
 const cleanPeopleData = (people) => {
@@ -33,21 +33,21 @@ const cleanPeopleData = (people) => {
       id: Date.now() + index,
       type: 'peopleData'
     }
-  })
+  });
 }
 
 const fetchPeople = async () => {
-  const { results } = await apiGet(`${root}/people/`)
-  const getPeople = await fetchPeopleDetails(results)
-  const people = await Promise.all(getPeople)
-  return cleanPeopleData(people)
+  const { results } = await apiGet(`${root}/people/`);
+  const getPeople = await fetchPeopleDetails(results);
+  const people = await Promise.all(getPeople);
+  return cleanPeopleData(people);
 }
 
 const fetchPeopleDetails = (peopleArray) => {
   return peopleArray.map( async (person) => {
-    let homeworld = await apiGet(person.homeworld)
-    let species = await apiGet(person.species)
-    return {...person, homeworld, species}
+    let homeworld = await apiGet(person.homeworld);
+    let species = await apiGet(person.species);
+    return {...person, homeworld, species};
   })
 }
 
@@ -65,24 +65,24 @@ const cleanPlanetData = (planets) => {
       id: Date.now() + index,
       type: 'planetData'
     }
-  })
+  });
 }
 
 const fetchPlanets = async () => {
-  const { results } = await apiGet(`${root}/planets/`)
-  const getResidents = await fetchPlanetResidents(results)
-  const planets = await Promise.all(getResidents)
-  return cleanPlanetData(planets)
+  const { results } = await apiGet(`${root}/planets/`);
+  const getResidents = await fetchPlanetResidents(results);
+  const planets = await Promise.all(getResidents);
+  return cleanPlanetData(planets);
 }
 
 const fetchPlanetResidents = (planetArray) => {
   return planetArray.map( async (planet) => {
     let peoplePromises = await planet.residents.map( async person => {
-      const resident = await apiGet(person)
-      return resident
+      const resident = await apiGet(person);
+      return resident;
     })
-    const residents = await Promise.all(peoplePromises)
-    return {...planet, residents}
+    const residents = await Promise.all(peoplePromises);
+    return {...planet, residents};
   })
 }
 
@@ -99,11 +99,11 @@ const cleanVehicleData = (vehicles) => {
       id: Date.now() + index,
       type: 'vehicleData'
     }
-  })
+  });
 }
 
 const fetchVehicles = async () => {
-  const { results } = await apiGet(`${root}/vehicles/`)
+  const { results } = await apiGet(`${root}/vehicles/`);
   return cleanVehicleData(results);
 } 
 
