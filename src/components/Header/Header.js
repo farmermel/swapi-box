@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Button from '../Button/Button';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
 import lego from '../../assets/lego.svg';
 import yoda from '../../assets/yoda.png';
@@ -19,24 +18,24 @@ const Header = ({ getPlanets, getVehicles }) => {
              className='header-logo' />
       </div>
       <nav>
-        <Link to={ {pathname: '/people'} }>
+        <NavLink to={ {pathname: '/people'} }>
           <button className='people'>
           </button>
-        </Link>
-        <Link to={ {pathname: '/planets'} }
+        </NavLink>
+        <NavLink to={ {pathname: '/planets'} }
               onClick={ getPlanets }>
           <button className='planets'>
           </button>
-        </Link>
-        <Link to={ {pathname: '/vehicles'} }
+        </NavLink>
+        <NavLink to={ {pathname: '/vehicles'} }
               onClick={ getVehicles }>
           <button className='vehicles'>
           </button>
-          </Link>
-        <Link to={ {pathname: '/favorites'} }>
+          </NavLink>
+        <NavLink to={ {pathname: '/favorites'} }>
           <button className='favorites'>
           </button>
-        </Link>
+        </NavLink>
       </nav>
     </div>
   )
