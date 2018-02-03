@@ -2,8 +2,8 @@ import React from 'react';
 import '../Card/Card.css';
 
 const Card = ({ data, toggleFav }) => {
-  let displayItems = Object.entries(data.info).map( item => { 
-    return <p><span>{ item[0] }: </span>{ item[1] }</p>
+  let displayItems = Object.entries(data.info).map( (item, index) => { 
+    return <p key={`${index}${item[1]}`}><span>{ item[0] }: </span>{ item[1] }</p>
   })
 
   return (
