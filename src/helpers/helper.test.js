@@ -5,40 +5,18 @@ let mockDataType;
 
 window.fetch = jest.fn().mockImplementation( (url) => {
   return Promise.resolve({
-    ok: true,
     status: 200,
-    //mockDataType here will be the path to accessing the proper data
-    //from mock object eg 'mockData.people.homeworld'
     json: () => Promise.resolve(mockDataType)
   })
 })
 
-swapiData.apiGet = jest.fn().mockImplementation( (url) => {
-  return window.fetch(url);
+const mockApiGet = jest.fn().mockImplementation( (url) => {
+  return window.fetch;
 })
 
 describe('swapiData', () => {
   afterEach(() => {
-    swapiData.apiGet.mockClear()
-  })
-
-  describe('apiGet', () => {
-    it('makes a call to fetch if status is at or below 200', () => {
-      expect(window.fetch).not.toHaveBeenCalled()
-      swapiData.apiGet('people')
-      expect(window.fetch).toHaveBeenCalled()
-    })
-
-    it('returns an error if status is above 200', async () => {
-    //   window.fetch = jest.fn().mockImplementation( (url) => {
-    //     return Promise.reject({
-    //       status: () => throw(new Error('Error'))
-    //     })
-    //   })
-    //   await swapiData.apiGet('people')
-    //   await expect(window.fetch).toThrowError()
-    //   window.fetch.mockClear()
-    })
+    window.fetch.mockClear()
   })
 
   describe('cleanMovieData', () => {
@@ -63,44 +41,41 @@ describe('swapiData', () => {
   })
 
   describe('fetchMovie', () => {
-    it('calls apiGet with url ending in number fetchMovie is passed', async () => {
+    it('calls fetch with url ending in number fetchMovie is passed', async () => {
       mockDataType = mockData.films.results[0];
-      expect(swapiData.apiGet).not.toHaveBeenCalled();
-      await swapiData.fetchMovie(7);
-      expect(swapiData.apiGet).toHaveBeenCalled();
 
-    })
-
-    it('calls cleanMovieData with results', () => {
-      
+      expect(window.fetch).not.toHaveBeenCalled();
+      await swapiData.fetchMovie();
+      expect(window.fetch).toHaveBeenCalled();
     })
   })
 
   describe('cleanPeopleData', () => {
     it('returns an object containing name, homeworld, homeworldPop, and species', () => {
+      let cleanData = {"favorite": false,
+        "id": 1517623585413,
+        "info": {
+          "homeworld": undefined,
+          "homeworldPop": undefined,
+          "name": "Luke Skywalker",
+          "species": undefined
+        },
+        "type": "peopleData"}
 
-    })
-
-    it('returns an object with all string values', () => {
-
+      expect(swapiData.cleanPeopleData(mockData.people.results)[0].favorite).toEqual(cleanData.favorite);
+      expect(swapiData.cleanPeopleData(mockData.people.results)[0].info).toEqual(cleanData.info);
+      expect(swapiData.cleanPeopleData(mockData.people.results)[0].type).toEqual('peopleData');
+      expect(typeof swapiData.cleanPeopleData(mockData.people.results)[0].id).toEqual('number');
     })
   })
 
   describe('fetchPeople', () => {
     it('calls apiGet with url', () => {
+      mockDataType = mockData.people.results;
 
-    })
-    
-    it('calls fetchPeopleDetails with apiGet\'s return value .homeworld', () => {
-
-    })
-
-    it('calls Promise.all with results of fetchPeopleDetails', () => {
-
-    })
-
-    it('calls cleanPeopleData with results of Promise.all', () => {
-
+      // expect(window.fetch).not.toHaveBeenCalled();
+      // swapiData.fetchPeople();
+      // expect(window.fetch).toHaveBeenCalled();
     })
 
     it('returns clean people data', () => {
@@ -109,18 +84,63 @@ describe('swapiData', () => {
   })
 
   describe('fetchPeopleDetails', () => {
-    it('calls apiGet with the homeworld and species each item in the array it is passed', () => {
+    it('calls fetch with the homeworld endpoint for each item in the array it is passed', () => {
+      mockDataType = mockData.people.results;
 
-    })
-    
-    it('returns an array of objects containing person, homeworld, and species data', () => {
-
+      swapiData.fetchPeopleDetails(mockDataType);
+      expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/planets/1/')
     })
   })
 
   describe('fetchPlanets', () => {
-    it('calls apiGet with url for planets', () => {
+    it('calls fetch with planet endpoint', () => {
+      // mockDataType = [...mockData.planets.results, ...mockData.planets.results];
 
+      // swapiData.fetchPlanets(mockDataType);
+      // expect(window.fetch).toHaveBeenCalledWith();
+    })
+  })
+
+  describe('fetchPlanetResidents', () => {
+    it('calls fetch with person endpoint', () => {
+      mockDataType = mockData.planets.results;
+      const expected = [["https://swapi.co/api/people/5/"], ["https://swapi.co/api/people/68/"], ["https://swapi.co/api/people/81/"]];
+
+      swapiData.fetchPlanetResidents(mockDataType);
+      expect(window.fetch.mock.calls).toEqual(expected);
+    })
+  })
+
+  describe('cleanPlanetData', () => {
+    it('returns an object with an info object, favorite, id, and type', () => {
+      mockDataType = mockData.planets.results;
+      const expected = {"climate": "temperate", "name": "Alderaan", "population": "2000000000", "residents": ["https://swapi.co/api/people/5/", "https://swapi.co/api/people/68/", "https://swapi.co/api/people/81/"], "terrain": "grasslands, mountains"};
+
+      expect(swapiData.cleanPlanetData(mockDataType)[0].info).toEqual(expected);
+      expect(swapiData.cleanPlanetData(mockDataType)[0].favorite).toEqual(false);
+      expect(swapiData.cleanPlanetData(mockDataType)[0].type).toEqual('planetData');
+      expect(typeof swapiData.cleanPlanetData(mockDataType)[0].id).toEqual('number');
+    })
+  })
+
+  describe('cleanVehicleData', () => {
+    it('returns an object with an info object, favorite, id, and type', () => {
+      mockDataType = mockData.vehicles.results;
+      const expected = {"class": "wheeled", "model": "Digger Crawler", "name": "Sand Crawler", "passengers": "30"};
+
+      expect(swapiData.cleanVehicleData(mockDataType)[0].info).toEqual(expected);
+      expect(swapiData.cleanVehicleData(mockDataType)[0].favorite).toEqual(false);
+      expect(swapiData.cleanVehicleData(mockDataType)[0].type).toEqual('vehicleData');
+      expect(typeof swapiData.cleanVehicleData(mockDataType)[0].id).toEqual('number');
+    })
+  })
+
+  describe('fetchVehicles', () => {
+    it('calls fetch with vehicles endpoint', () => {
+      // mockDataType = mockData.vehicles.results;
+
+      // swapiData.fetchVehicles(mockDataType);
+      // expect(window.fetch).toHaveBeenCalledWith()
     })
   })
 })

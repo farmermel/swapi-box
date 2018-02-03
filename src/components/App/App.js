@@ -19,15 +19,10 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    // const movieNum = this.randomizeFilmScroll();
     const movieData = await swapiData.fetchMovie();
     const peopleData = await swapiData.fetchPeople();
     this.setState({ movieData, peopleData });
   }
-
-  // getPeople = () => {
-
-  // }
 
   getVehicles = async () => {
     const vehicleState = this.state.vehicleData;
@@ -45,6 +40,27 @@ class App extends Component {
     });
   }
 
+  toggleFav = (cardData) => {
+    let stateData = [...this.state[cardData.type]];
+    stateData.forEach( item => {
+      item.id === cardData.id 
+      ? item.favorite = !item.favorite 
+      : item;
+    })
+
+    let favorites = this.state.favorites
+    if(favorites.includes(cardData)) {
+      favorites.splice(favorites.indexOf(cardData))
+    } else {
+      favorites = [...favorites, cardData]
+    }
+
+    this.setState({
+     [cardData.type]: stateData,
+     favorites
+    })
+  }
+
   getFavs = () => {
 
   }
@@ -58,22 +74,22 @@ class App extends Component {
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 
                            getData={ this.getPeople }
-                           cardType='PeopleCard' />) }>
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/vehicles' render={ () => (
             <CardContainer cardData={ this.state.vehicleData } 
                            getData={ this.getVehicles }
-                           cardType='VehicleCard' />) }>
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/planets' render={ () => (
             <CardContainer cardData={ this.state.planetData } 
                            getData={ this.getPlanets } 
-                           cardType='PlanetCard'/>) }>
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/favorites' render={ () => (
             <CardContainer cardData={ this.state.favorites } 
                            getData={ this.getFavs } 
-                           cardType='FavoritesCard'/>) }>
+                           toggleFav={ this.toggleFav } />) }>
           </Route>
         </Switch>
         <ScrollText movieData={ this.state.movieData } />

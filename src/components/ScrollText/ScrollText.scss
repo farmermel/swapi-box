@@ -1,10 +1,15 @@
 .movie-info {
-  background-color: green;
+  position: relative;
+  top: 110px;
+  margin: 0;
+  background-color: inherit;
+  color: yellow;
+  font-size: 3em;
+  text-align: center;
 }
 
 .scroll-container {
   font-family: 'legothickregular';
-  background-color: #000;
   color: yellow;
   // position: absolute;
   position: relative;
@@ -25,7 +30,7 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: 60%;
+    bottom: 30%;
     background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
     pointer-events: none;
   }

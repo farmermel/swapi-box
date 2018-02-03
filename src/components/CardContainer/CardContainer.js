@@ -1,44 +1,24 @@
 import React from 'react';
-import PeopleCard from '../PeopleCard/PeopleCard';
-import PlanetCard from '../PlanetCard/PlanetCard';
-import VehicleCard from '../VehicleCard/VehicleCard';
-import FavoritesCard from '../FavoritesCard/FavoritesCard';
+import Card from '../Card/Card'
+import loading from '../../assets/loading.gif';
 import './CardContainer.css';
 
-let cards;
-const createPeopleCards = data => {
-  cards = data.map( card => {
-      return <PeopleCard data={card} />
-    })
+const createCards = ( data, toggleFav ) => {
+  return data.map( (card) => {
+    return <Card data={card} 
+                 toggleFav={toggleFav}
+                 key={card.id} />
+  })
 }
 
-const createPlanetCards = data => {
-  cards = data.map( card => {
-      return <PlanetCard data={card} />
-    })
-}
 
-const createVehicleCards = data => {
-  cards = data.map( card => {
-      return <VehicleCard data={card} />
-    })
-}
-
-const createFavoritesCards = data => {
-  cards = data.map( card => {
-      return <FavoritesCard data={card} />
-    })
-}
-
-const CardContainer = ({ cardData, getData, cardType }) => {
-  cardType === 'PeopleCard' && createPeopleCards(cardData);
-  cardType === 'PlanetCard' && createPlanetCards(cardData);
-  cardType === 'VehicleCard' && createVehicleCards(cardData);
-  cardType === 'FavoritesCard' && createFavoritesCards(cardData);
-
+const CardContainer = ({ cardData, getData, toggleFav }) => {
   return (
     <div className='card-container'>
-      {cards}
+      {!cardData.length && <img src={loading} 
+                                alt='page is loading'
+                                className='loading-gif' /> }
+      {createCards(cardData, toggleFav)}
     </div>
   )
 }

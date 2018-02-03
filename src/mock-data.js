@@ -1,4 +1,44 @@
 const mockData = {
+  "cleaned": {
+    "people": {
+      "info": {
+        "name": "Luke Skywalker",
+        "homeworld": "Naboo",
+        "species": "Human" 
+      },
+      "favorite": false,
+      "id": 1098234,
+      "type": 'peopleData'
+    },
+    "film": {
+      "scroll": "BLAHBLAH STAR WARS",
+      "title": "SITH",
+      "date": "2017"
+    },
+    "planet": {
+      "info": {
+        "name": "NABOO",
+        "terrain": "sandy",
+        "population": "4",
+        "climate": "hot",
+        "residents": "no residents"
+      },
+      "favorite": false,
+      "id": 9823742,
+      "type": "planetData"
+    },
+    "vehicle": {
+      "info": {
+        "name": "ship",
+        "model": "seven",
+        "class": "wheeled",
+        "passengers": "9"
+      },
+      "favorite": false,
+      "id": 98345,
+      "type": "vehicleData"
+    }
+  },
   "people": {
     "count": 1, 
     "next": "https://swapi.co/api/people/?page=2", 

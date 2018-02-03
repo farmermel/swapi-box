@@ -1,0 +1,75 @@
+.card {
+  position: relative;
+  padding: 20px 10px 20px 23px;
+  margin: 5px 40px 20px;
+  height: 350px;
+  width: 180px; }
+
+.peopleData {
+  border: 6px outset #ffeb3b;
+  background-color: #edcd00; }
+  .peopleData:hover {
+    border: 6px inset #ffeb3b; }
+
+.peopleData .favorites {
+  border: none;
+  background-color: #edcd00;
+  height: 35px;
+  width: 35px; }
+
+.planetData {
+  border: 6px inset #7da74c;
+  background-color: #8bc34a; }
+  .planetData:hover {
+    border: 6px outset #7da74c; }
+
+.planetData .favorites {
+  border: none;
+  background-color: #8bc34a;
+  height: 35px;
+  width: 35px; }
+
+.vehicleData {
+  border: 6px outset #8c64be;
+  background-color: #a380ce; }
+  .vehicleData:hover {
+    border: 6px inset #8c64be; }
+
+.vehicleData .favorites {
+  border: none;
+  background-color: #a380ce;
+  height: 35px;
+  width: 35px; }
+
+#favd {
+  background-color: magenta; }
+
+#res-list {
+  margin: 0;
+  height: 20px; }
+
+.card p {
+  height: 30px; }
+
+.bump-top,
+.bump,
+.bump-bottom {
+  position: absolute;
+  left: -19px;
+  border: inherit;
+  border-right: none;
+  background-color: inherit;
+  height: 40px;
+  width: 13px; }
+
+.bump {
+  top: 149px; }
+
+.bump-bottom {
+  top: 250px; }
+
+.bump-top {
+  top: 50px; }
+
+p span {
+  font-weight: bold; }

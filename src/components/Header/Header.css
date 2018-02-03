@@ -15,19 +15,21 @@ nav {
   padding: 20px;
   border-radius: 8px;
   border: 1px solid black;
-  background-color: #4296ff; }
+  background-color: #87bcff; }
 
 nav button {
   border: none;
   margin: 15px;
-  background-color: #4296ff;
+  background-color: #87bcff;
   border: none; }
   nav button:hover {
-    background-color: yellow;
-    opacity: 0.6; }
+    background-color: #DA5344;
+    border-radius: 11px;
+    opacity: 0.7; }
 
-.active {
-  background-color: magenta; }
+.active button {
+  border-radius: 11px;
+  background-color: #DA5344; }
 
 .page-title {
   display: inline-block;

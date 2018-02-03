@@ -1,0 +1,100 @@
+$border-green: #7da74c;
+$border-purple: #8c64be;
+$green: #8bc34a;
+$orange: #ff7535;
+$purple: #a380ce;
+$yellow: #edcd00;
+
+.card {
+  position: relative;
+  padding: 20px 10px 20px 23px;
+  margin: 5px 40px 20px;
+  height: 350px;
+  width: 180px;
+}
+
+.peopleData {
+  border: 6px outset #ffeb3b;
+  background-color: $yellow;
+  &:hover {
+    border: 6px inset #ffeb3b;
+  }
+}
+
+.peopleData .favorites {
+  border: none;
+  background-color: #edcd00;
+  height: 35px;
+  width: 35px;
+}
+
+.planetData {
+  border: 6px inset $border-green;
+  background-color: $green;
+  &:hover {
+    border: 6px outset $border-green;
+  }
+}
+
+.planetData .favorites {
+  border: none;
+  background-color: $green;
+  height: 35px;
+  width: 35px;
+}
+
+.vehicleData {
+  border: 6px outset $border-purple;
+  background-color: $purple;
+  &:hover {
+    border: 6px inset $border-purple;
+  }
+}
+
+.vehicleData .favorites {
+  border: none;
+  background-color: $purple;
+  height: 35px;
+  width: 35px;
+}
+
+#favd {
+  background-color: magenta;
+}
+
+#res-list {
+  margin: 0;
+  height: 20px
+}
+
+.card p {
+  height: 30px;
+}
+
+.bump-top,
+.bump,
+.bump-bottom {
+  position: absolute;
+  left: -19px;
+  border: inherit;
+  border-right: none;
+  background-color: inherit;
+  height: 40px;
+  width: 13px;
+}
+
+.bump {
+  top: 149px;
+}
+
+.bump-bottom {
+  top: 250px;
+}
+
+.bump-top {
+  top: 50px;
+}
+
+p span {
+  font-weight: bold;
+}
