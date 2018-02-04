@@ -1,5 +1,3 @@
-const root = 'https://swapi.co/api';
-
 const apiGet = async (url) => {
   try {
     const initialFetch = await fetch(url)

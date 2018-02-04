@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Button from '../Button/Button';
-import './Header.css';
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import lego from '../../assets/lego.svg';
 import yoda from '../../assets/yoda.png';
+import './Header.css';
 
 const Header = ({ getPlanets, getVehicles }) => {
   return (
@@ -19,27 +19,32 @@ const Header = ({ getPlanets, getVehicles }) => {
              className='header-logo' />
       </div>
       <nav>
-        <Link to={ {pathname: '/people'} }>
+        <NavLink to={ {pathname: '/people'} }>
           <button className='people'>
           </button>
-        </Link>
-        <Link to={ {pathname: '/planets'} }
+        </NavLink>
+        <NavLink to={ {pathname: '/planets'} }
               onClick={ getPlanets }>
           <button className='planets'>
           </button>
-        </Link>
-        <Link to={ {pathname: '/vehicles'} }
+        </NavLink>
+        <NavLink to={ {pathname: '/vehicles'} }
               onClick={ getVehicles }>
           <button className='vehicles'>
           </button>
-          </Link>
-        <Link to={ {pathname: '/favorites'} }>
+          </NavLink>
+        <NavLink to={ {pathname: '/favorites'} }>
           <button className='favorites'>
           </button>
-        </Link>
+        </NavLink>
       </nav>
     </div>
   )
+}
+
+Header.propTypes = {
+  getPlanets: PropTypes.func.isRequired,
+  getVehicles: PropTypes.func.isRequired
 }
 
 export default Header;

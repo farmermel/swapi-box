@@ -1,43 +1,43 @@
 .card {
   position: relative;
-  width: 180px;
-  height: 300px;
   padding: 20px 10px 20px 23px;
-  margin: 5px 40px 20px; }
+  margin: 5px 40px 20px;
+  height: 350px;
+  width: 180px; }
 
 .peopleData {
-  background-color: #edcd00;
-  border: 6px outset #ffeb3b; }
+  border: 6px outset #ffeb3b;
+  background-color: #edcd00; }
   .peopleData:hover {
     border: 6px inset #ffeb3b; }
 
 .peopleData .favorites {
-  width: 35px;
-  height: 35px;
+  border: none;
   background-color: #edcd00;
-  border: none; }
+  height: 35px;
+  width: 35px; }
 
 .planetData {
-  background-color: #8bc34a;
-  border: 6px inset #7da74c; }
+  border: 6px inset #7da74c;
+  background-color: #8bc34a; }
   .planetData:hover {
     border: 6px outset #7da74c; }
 
 .planetData .favorites {
-  background-color: #8bc34a;
   border: none;
+  background-color: #8bc34a;
   height: 35px;
   width: 35px; }
 
 .vehicleData {
-  background-color: #a380ce;
-  border: 6px outset #8c64be; }
+  border: 6px outset #8c64be;
+  background-color: #a380ce; }
   .vehicleData:hover {
     border: 6px inset #8c64be; }
 
 .vehicleData .favorites {
-  background-color: #a380ce;
   border: none;
+  background-color: #a380ce;
   height: 35px;
   width: 35px; }
 
@@ -55,12 +55,12 @@
 .bump,
 .bump-bottom {
   position: absolute;
-  width: 13px;
-  height: 40px;
   left: -19px;
   border: inherit;
   border-right: none;
-  background-color: inherit; }
+  background-color: inherit;
+  height: 40px;
+  width: 13px; }
 
 .bump {
   top: 149px; }

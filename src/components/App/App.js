@@ -41,30 +41,20 @@ class App extends Component {
   }
 
   toggleFav = (cardData) => {
-    let stateData = [...this.state[cardData.type]];
+    let { [cardData.type]: stateData, favorites } = this.state
     stateData.forEach( item => {
       item.id === cardData.id 
       ? item.favorite = !item.favorite 
       : item;
     })
+    favorites.includes(cardData)
+    ? favorites.splice(favorites.indexOf(cardData), 1)
+    : favorites = [...favorites, cardData];
 
-    let favorites = this.state.favorites
-    favorites = favorites.indexOf(cardData) === -1 
-    ? [...favorites, cardData]
-    : favorites.splice(favorites.indexOf(cardData))
-    // let favorites = [...this.state.favorites, cardData]
-
-    // let favorites = this.state.favorites.filter( fav => {
-
-    // })
     this.setState({
      [cardData.type]: stateData,
      favorites
     })
-  }
-
-  getFavs = () => {
-
   }
 
   render() {
@@ -75,26 +65,18 @@ class App extends Component {
         <Switch>
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 
-                           getData={ this.getPeople }
-                           cardType='peopleData' 
                            toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/vehicles' render={ () => (
             <CardContainer cardData={ this.state.vehicleData } 
-                           getData={ this.getVehicles }
-                           cardType='vehicleData'
                            toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/planets' render={ () => (
             <CardContainer cardData={ this.state.planetData } 
-                           getData={ this.getPlanets } 
-                           cardType='planetData'
                            toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/favorites' render={ () => (
             <CardContainer cardData={ this.state.favorites } 
-                           getData={ this.getFavs } 
-                           cardType='FavoritesCard'
                            toggleFav={ this.toggleFav } />) }>
           </Route>
         </Switch>

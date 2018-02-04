@@ -15,7 +15,7 @@ const mockData = {
       "title": "SITH",
       "date": "2017"
     },
-    "planet": {
+    "planet": [{
       "info": {
         "name": "NABOO",
         "terrain": "sandy",
@@ -26,8 +26,8 @@ const mockData = {
       "favorite": false,
       "id": 9823742,
       "type": "planetData"
-    },
-    "vehicle": {
+    }],
+    "vehicle": [{
       "info": {
         "name": "ship",
         "model": "seven",
@@ -37,7 +37,7 @@ const mockData = {
       "favorite": false,
       "id": 98345,
       "type": "vehicleData"
-    }
+    }]
   },
   "people": {
     "count": 1, 

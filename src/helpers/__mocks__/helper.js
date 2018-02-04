@@ -12,8 +12,13 @@ const fetchVehicles = jest.fn().mockImplementation( () => {
   return mockData.cleaned.vehicle;
 })
 
+const fetchPlanets = jest.fn().mockImplementation( () => {
+  return mockData.cleaned.planet;
+})
+
 export default {
   fetchPeople,
   fetchMovie,
-  fetchVehicles
+  fetchVehicles,
+  fetchPlanets
 }

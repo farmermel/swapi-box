@@ -1,0 +1,623 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    data={
+        Object {
+            "favorite": false,
+            "id": 9823742,
+            "info": Object {
+              "climate": "hot",
+              "name": "NABOO",
+              "population": "4",
+              "residents": "no residents",
+              "terrain": "sandy",
+            },
+            "type": "planetData",
+          }
+    }
+    toggleFav={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="favorites"
+          id={undefined}
+          onClick={[Function]}
+/>,
+        Array [
+          <p>
+            <span>
+                        name
+                        : 
+            </span>
+            NABOO
+</p>,
+          <p>
+            <span>
+                        terrain
+                        : 
+            </span>
+            sandy
+</p>,
+          <p>
+            <span>
+                        population
+                        : 
+            </span>
+            4
+</p>,
+          <p>
+            <span>
+                        climate
+                        : 
+            </span>
+            hot
+</p>,
+          <p>
+            <span>
+                        residents
+                        : 
+            </span>
+            no residents
+</p>,
+        ],
+        <div
+          className="bump-top"
+/>,
+        <div
+          className="bump"
+/>,
+        <div
+          className="bump-bottom"
+/>,
+      ],
+      "className": "card planetData",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "favorites",
+          "id": undefined,
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": "0NABOO",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span>
+              name
+              : 
+</span>,
+            "NABOO",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "name",
+                ": ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "name",
+              ": ",
+            ],
+            "type": "span",
+          },
+          "NABOO",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "1sandy",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span>
+              terrain
+              : 
+</span>,
+            "sandy",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "terrain",
+                ": ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "terrain",
+              ": ",
+            ],
+            "type": "span",
+          },
+          "sandy",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "24",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span>
+              population
+              : 
+</span>,
+            "4",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "population",
+                ": ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "population",
+              ": ",
+            ],
+            "type": "span",
+          },
+          "4",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "3hot",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span>
+              climate
+              : 
+</span>,
+            "hot",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "climate",
+                ": ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "climate",
+              ": ",
+            ],
+            "type": "span",
+          },
+          "hot",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": "4no residents",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span>
+              residents
+              : 
+</span>,
+            "no residents",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "residents",
+                ": ",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "residents",
+              ": ",
+            ],
+            "type": "span",
+          },
+          "no residents",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "bump-top",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "bump",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "bump-bottom",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="favorites"
+            id={undefined}
+            onClick={[Function]}
+/>,
+          Array [
+            <p>
+              <span>
+                            name
+                            : 
+              </span>
+              NABOO
+</p>,
+            <p>
+              <span>
+                            terrain
+                            : 
+              </span>
+              sandy
+</p>,
+            <p>
+              <span>
+                            population
+                            : 
+              </span>
+              4
+</p>,
+            <p>
+              <span>
+                            climate
+                            : 
+              </span>
+              hot
+</p>,
+            <p>
+              <span>
+                            residents
+                            : 
+              </span>
+              no residents
+</p>,
+          ],
+          <div
+            className="bump-top"
+/>,
+          <div
+            className="bump"
+/>,
+          <div
+            className="bump-bottom"
+/>,
+        ],
+        "className": "card planetData",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "favorites",
+            "id": undefined,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": "0NABOO",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                name
+                : 
+</span>,
+              "NABOO",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "name",
+                  ": ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "name",
+                ": ",
+              ],
+              "type": "span",
+            },
+            "NABOO",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "1sandy",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                terrain
+                : 
+</span>,
+              "sandy",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "terrain",
+                  ": ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "terrain",
+                ": ",
+              ],
+              "type": "span",
+            },
+            "sandy",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "24",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                population
+                : 
+</span>,
+              "4",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "population",
+                  ": ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "population",
+                ": ",
+              ],
+              "type": "span",
+            },
+            "4",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "3hot",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                climate
+                : 
+</span>,
+              "hot",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "climate",
+                  ": ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "climate",
+                ": ",
+              ],
+              "type": "span",
+            },
+            "hot",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": "4no residents",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                residents
+                : 
+</span>,
+              "no residents",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "residents",
+                  ": ",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "residents",
+                ": ",
+              ],
+              "type": "span",
+            },
+            "no residents",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "bump-top",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "bump",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "bump-bottom",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -70,16 +70,23 @@ describe('swapiData', () => {
   })
 
   describe('fetchPeople', () => {
-    it('calls apiGet with url', () => {
-      mockDataType = mockData.people.results;
+    it('calls apiGet with url', async () => {
+      mockDataType = mockData.people;
+      expect(window.fetch).not.toHaveBeenCalled();
 
-      // expect(window.fetch).not.toHaveBeenCalled();
-      // swapiData.fetchPeople();
-      // expect(window.fetch).toHaveBeenCalled();
+      await swapiData.fetchPeople();
+
+      expect(window.fetch).toHaveBeenCalled();
     })
 
-    it('returns clean people data', () => {
+    it('returns clean people data', async () => {
+      mockDataType = mockData.people;
+      const expectedInfo = {"homeworld": undefined, "homeworldPop": undefined, "name": "Luke Skywalker", "species": undefined};
 
+      expect((await swapiData.fetchPeople())[0].favorite).toEqual(false);
+      expect((await swapiData.fetchPeople())[0].info).toEqual(expectedInfo);
+      expect((await swapiData.fetchPeople())[0].type).toEqual("peopleData");
+      expect(typeof(await swapiData.fetchPeople())[0].id).toEqual("number");
     })
   })
 
@@ -94,10 +101,10 @@ describe('swapiData', () => {
 
   describe('fetchPlanets', () => {
     it('calls fetch with planet endpoint', () => {
-      // mockDataType = [...mockData.planets.results, ...mockData.planets.results];
+      mockDataType = mockData.planets;
 
-      // swapiData.fetchPlanets(mockDataType);
-      // expect(window.fetch).toHaveBeenCalledWith();
+      swapiData.fetchPlanets(mockDataType);
+      expect(window.fetch).toHaveBeenCalledWith("https://swapi.co/api/planets/");
     })
   })
 
@@ -114,9 +121,9 @@ describe('swapiData', () => {
   describe('cleanPlanetData', () => {
     it('returns an object with an info object, favorite, id, and type', () => {
       mockDataType = mockData.planets.results;
-      const expected = {"climate": "temperate", "name": "Alderaan", "population": "2000000000", "residents": ["https://swapi.co/api/people/5/", "https://swapi.co/api/people/68/", "https://swapi.co/api/people/81/"], "terrain": "grasslands, mountains"};
+      const expectedInfo = {"climate": "temperate", "name": "Alderaan", "population": "2000000000", "residents": ", , ", "terrain": "grasslands, mountains"};
 
-      expect(swapiData.cleanPlanetData(mockDataType)[0].info).toEqual(expected);
+      expect(swapiData.cleanPlanetData(mockDataType)[0].info).toEqual(expectedInfo);
       expect(swapiData.cleanPlanetData(mockDataType)[0].favorite).toEqual(false);
       expect(swapiData.cleanPlanetData(mockDataType)[0].type).toEqual('planetData');
       expect(typeof swapiData.cleanPlanetData(mockDataType)[0].id).toEqual('number');
@@ -137,10 +144,10 @@ describe('swapiData', () => {
 
   describe('fetchVehicles', () => {
     it('calls fetch with vehicles endpoint', () => {
-      // mockDataType = mockData.vehicles.results;
+      mockDataType = mockData.vehicles;
 
-      // swapiData.fetchVehicles(mockDataType);
-      // expect(window.fetch).toHaveBeenCalledWith()
+      swapiData.fetchVehicles(mockDataType);
+      expect(window.fetch).toHaveBeenCalledWith("https://swapi.co/api/vehicles/")
     })
   })
 })

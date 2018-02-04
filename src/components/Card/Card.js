@@ -1,19 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../Card/Card.css';
 
-
-const cleanItem = (item, value) => {
-  value = item.map( entry => <li id='res-list'>{entry.name}</li>)
-  return value;
-}
-
-const Card = ({ data, cardType, toggleFav }) => {
-  let displayItems = Object.entries(data.info).map( item => {
-    let value;
-    typeof item[1] === 'object' 
-      ? value = cleanItem(item[1], value) 
-      : null; 
-    return <p><span>{ item[0] }: </span>{ value || item[1] }</p>
+const Card = ({ data, toggleFav }) => {
+  let displayItems = Object.entries(data.info).map( (item, index) => { 
+    return <p key={`${index}${item[1]}`}><span>{ item[0] }: </span>{ item[1] }</p>
   })
 
   return (
@@ -27,6 +18,16 @@ const Card = ({ data, cardType, toggleFav }) => {
       <div className='bump-bottom'></div>
     </div>
   )
+}
+
+Card.propTypes = {
+  data: PropTypes.shape({
+    favorite: PropTypes.bool,
+    id: PropTypes.number,
+    type: PropTypes.string,
+    info: PropTypes.objectOf(PropTypes.string)
+  }),
+  toggleFav: PropTypes.func.isRequired
 }
 
 export default Card;

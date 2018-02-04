@@ -51,15 +51,22 @@ const fetchPeopleDetails = (peopleArray) => {
   })
 }
 
+const makeList = (residentsArr) => {
+  return residentsArr.map( resident => resident.name).join(', ')
+}
+
 const cleanPlanetData = (planets) => {
   return planets.map( (planet, index) => {
+    const residents = planet.residents.length
+      ? makeList(planet.residents)
+      : 'no residents'
     return {
       info: {
         name: planet.name,
         terrain: planet.terrain,
         population: planet.population,
         climate: planet.climate,
-        residents: planet.residents.length ? planet.residents : 'no residents'
+        residents: residents
       },
       favorite: false,
       id: Date.now() + index,
