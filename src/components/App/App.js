@@ -14,7 +14,8 @@ class App extends Component {
       peopleData: [],
       vehicleData: [],
       planetData: [],
-      favorites: []
+      favorites: [],
+      translated: false
     }
   }
 
@@ -57,11 +58,21 @@ class App extends Component {
     })
   }
 
+  translateToShyriiwook = async () => {
+    let { translated } = this.state;
+    const peopleData = translated 
+      ? await swapiData.fetchPeople()
+      : await swapiData.fetchShyriiwook();
+    this.setState({ peopleData });
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Header getVehicles={ this.getVehicles }
-                getPlanets={ this.getPlanets } />
+                getPlanets={ this.getPlanets }
+                translate={ this.translateToShyriiwook } />
         <Switch>
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 

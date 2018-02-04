@@ -114,6 +114,11 @@ const fetchVehicles = async () => {
   return cleanVehicleData(results);
 } 
 
+const fetchShyriiwook = async () => {
+  const { whrascwo, waahrascwoaoworc, rrrcrahoahaoro, aoworcrcraahwh } = await apiGet(`${root}/vehicles/?format=wookiee`);
+  return { whrascwo, waahrascwoaoworc, rrrcrahoahaoro, aoworcrcraahwh };
+}
+
 export default {
   apiGet,
   cleanMovieData,
@@ -125,5 +130,6 @@ export default {
   fetchPeopleDetails,
   fetchPlanets,
   fetchPlanetResidents,
-  fetchVehicles
+  fetchVehicles,
+  fetchShyriiwook
 }
