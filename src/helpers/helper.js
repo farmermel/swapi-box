@@ -112,7 +112,7 @@ const cleanVehicleData = (vehicles) => {
 const fetchVehicles = async () => {
   const { results } = await apiGet(`${root}/vehicles/`);
   return cleanVehicleData(results);
-} 
+}
 
 export default {
   apiGet,
