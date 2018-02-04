@@ -13,11 +13,16 @@ Data comes from the [Star Wars API](https://swapi.co/).
 
 #### Mobile
 
-![Design for mobile](https://i.imgur.com/RKbKDmq.png)
+![Design for mobile](https://i.imgur.com/RKbKDmql.png)
+
+
+### Technologies
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+It is a single page application using React router.
 
 To get more information of the template used go [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
 
 
 
