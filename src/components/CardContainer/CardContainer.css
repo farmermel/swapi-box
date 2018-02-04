@@ -5,8 +5,8 @@
 .loading-gif {
   border: 1px solid cornflowerblue;
   margin: auto;
-  width: 500px;
-  grid-column-start: 2;
+  width: 70%;
+  grid-column-start: 1;
   grid-column-end: 3; }
 
 @media screen and (max-width: 1140px) {
