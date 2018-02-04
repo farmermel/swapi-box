@@ -5,11 +5,13 @@ import lego from '../../assets/lego.svg';
 import yoda from '../../assets/yoda.png';
 import './Header.css';
 
-const Header = ({ getPlanets, getVehicles, translate }) => {
+const Header = ({ getPlanets, getVehicles, translate, translated }) => {
+  const buttonDisplay = translated ? 'Aoawhraaowo English' : 'Translate to Shyriiwook';
+
   return (
     <div className='header'>
     <button className='wookiee'
-            onClick={() => translate()}>Translate to Shyriiwook</button>
+            onClick={() => translate()}>{ buttonDisplay }</button>
     <img src={ lego }
              alt='lego brand'
              className='header-logo'
@@ -47,7 +49,9 @@ const Header = ({ getPlanets, getVehicles, translate }) => {
 
 Header.propTypes = {
   getPlanets: PropTypes.func.isRequired,
-  getVehicles: PropTypes.func.isRequired
+  getVehicles: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
+  translated: PropTypes.bool.isRequired
 }
 
 export default Header;
