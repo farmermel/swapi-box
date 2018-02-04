@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import CardContainer from '../CardContainer/CardContainer';
 import ScrollText from '../ScrollText/ScrollText';
 import swapiData from '../../helpers/helper';
+import wookieeData from '../../assets/wookiee.js'
 import './App.css';
 
 class App extends Component {
@@ -59,11 +60,19 @@ class App extends Component {
   }
 
   translateToShyriiwook = async () => {
+    let peopleData, vehicleData, planetData;
     let { translated } = this.state;
-    const peopleData = translated 
-      ? await swapiData.fetchPeople()
-      : await swapiData.fetchShyriiwook();
-    this.setState({ peopleData });
+    if(translated) {
+      peopleData = await swapiData.fetchPeople();
+      vehicleData = await swapiData.fetchVehicles();
+      planetData = await swapiData.fetchPlanets();
+    } else {
+      peopleData = wookieeData.people;
+      vehicleData =wookieeData.vehicles;
+      planetData = wookieeData.planets;
+    }
+    translated = !translated;
+    this.setState({ peopleData, vehicleData, planetData, translated });
   }
 
   render() {
