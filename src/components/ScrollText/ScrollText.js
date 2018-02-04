@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ScrollText.css';
 
 const ScrollText = ({ movieData }) => {
@@ -15,6 +16,10 @@ const ScrollText = ({ movieData }) => {
       </article>
     </div>
   )
-}
+};
+
+ScrollText.propTypes = {
+  movieData: PropTypes.objectOf(PropTypes.string)
+};
 
 export default ScrollText;

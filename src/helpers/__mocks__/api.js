@@ -1,7 +1,7 @@
 import mockData from '../mock-data.js';
 
 
-window.fetch = jest.fn().mockImplementation( (url) => {
+window.fetch = jest.fn().mockImplementation( () => {
   return Promise.resolve({
     status: 200,
     json: () => Promise.resolve({})

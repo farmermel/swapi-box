@@ -57,7 +57,7 @@ const makeList = (residentsArr) => {
 
 const cleanPlanetData = (planets) => {
   return planets.map( (planet, index) => {
-    planet.residents = planet.residents.length
+    const residents = planet.residents.length
       ? makeList(planet.residents)
       : 'no residents'
     return {
@@ -66,7 +66,7 @@ const cleanPlanetData = (planets) => {
         terrain: planet.terrain,
         population: planet.population,
         climate: planet.climate,
-        residents: planet.residents
+        residents: residents
       },
       favorite: false,
       id: Date.now() + index,
