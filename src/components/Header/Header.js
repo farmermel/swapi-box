@@ -9,10 +9,11 @@ const Header = ({ getPlanets, getVehicles, translate }) => {
   return (
     <div className='header'>
     <button className='wookiee'
-            onClick={() => translate()}>Translate</button>
+            onClick={() => translate()}>Translate to Shyriiwook</button>
     <img src={ lego }
              alt='lego brand'
-             className='header-logo logo' />
+             className='header-logo'
+             id='logo' />
       <div className='page-header'>
         
         <h1 className='page-title'>STAR WARS</h1>
