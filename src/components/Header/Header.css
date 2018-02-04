@@ -27,6 +27,15 @@ nav button {
     border-radius: 11px;
     opacity: 0.7; }
 
+.wookiee {
+  align-self: flex-end;
+  border: none;
+  border-radius: 5px;
+  margin: 17px 17px 0 0;
+  height: 30px; }
+  .wookiee:hover {
+    background-color: #bebebe; }
+
 .active button {
   border-radius: 11px;
   background-color: #DA5344; }

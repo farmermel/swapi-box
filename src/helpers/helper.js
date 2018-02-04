@@ -125,5 +125,5 @@ export default {
   fetchPeopleDetails,
   fetchPlanets,
   fetchPlanetResidents,
-  fetchVehicles
+  fetchVehicles,
 }

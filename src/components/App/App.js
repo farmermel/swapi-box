@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import CardContainer from '../CardContainer/CardContainer';
 import ScrollText from '../ScrollText/ScrollText';
 import swapiData from '../../helpers/helper';
+import wookieeData from '../../assets/wookiee.js'
 import './App.css';
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
       peopleData: [],
       vehicleData: [],
       planetData: [],
-      favorites: []
+      favorites: [],
+      translated: false
     }
   }
 
@@ -57,11 +59,29 @@ class App extends Component {
     })
   }
 
+  translateToShyriiwook = async () => {
+    let peopleData, vehicleData, planetData;
+    let { translated } = this.state;
+    if(translated) {
+      peopleData = await swapiData.fetchPeople();
+      vehicleData = await swapiData.fetchVehicles();
+      planetData = await swapiData.fetchPlanets();
+    } else {
+      peopleData = wookieeData.people;
+      vehicleData =wookieeData.vehicles;
+      planetData = wookieeData.planets;
+    }
+    translated = !translated;
+    this.setState({ peopleData, vehicleData, planetData, translated });
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Header getVehicles={ this.getVehicles }
-                getPlanets={ this.getPlanets } />
+                getPlanets={ this.getPlanets }
+                translate={ this.translateToShyriiwook } />
         <Switch>
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 

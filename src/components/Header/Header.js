@@ -5,9 +5,11 @@ import lego from '../../assets/lego.svg';
 import yoda from '../../assets/yoda.png';
 import './Header.css';
 
-const Header = ({ getPlanets, getVehicles }) => {
+const Header = ({ getPlanets, getVehicles, translate }) => {
   return (
     <div className='header'>
+    <button className='wookiee'
+            onClick={() => translate()}>Translate</button>
     <img src={ lego }
              alt='lego brand'
              className='header-logo logo' />
