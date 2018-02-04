@@ -72,8 +72,8 @@ describe('swapiData', () => {
   describe('fetchPeople', () => {
     it('calls apiGet with url', () => {
       mockDataType = mockData.people.results;
-
-      // expect(window.fetch).not.toHaveBeenCalled();
+      // console.log(swapiData.fetchPeople) 
+      expect(window.fetch).not.toHaveBeenCalled();
       // swapiData.fetchPeople();
       // expect(window.fetch).toHaveBeenCalled();
     })
@@ -114,7 +114,7 @@ describe('swapiData', () => {
   describe('cleanPlanetData', () => {
     it('returns an object with an info object, favorite, id, and type', () => {
       mockDataType = mockData.planets.results;
-      const expected = {"climate": "temperate", "name": "Alderaan", "population": "2000000000", "residents": ["https://swapi.co/api/people/5/", "https://swapi.co/api/people/68/", "https://swapi.co/api/people/81/"], "terrain": "grasslands, mountains"};
+      const expected = {"climate": "temperate", "name": "Alderaan", "population": "2000000000", "residents": ", , ", "terrain": "grasslands, mountains"};
 
       expect(swapiData.cleanPlanetData(mockDataType)[0].info).toEqual(expected);
       expect(swapiData.cleanPlanetData(mockDataType)[0].favorite).toEqual(false);

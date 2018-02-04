@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.css';
+import PropTypes from 'prop-types';
 import lego from '../../assets/lego.svg';
 import yoda from '../../assets/yoda.png';
+import './Header.css';
 
 const Header = ({ getPlanets, getVehicles }) => {
   return (
@@ -39,6 +40,11 @@ const Header = ({ getPlanets, getVehicles }) => {
       </nav>
     </div>
   )
+}
+
+Header.propTypes = {
+  getPlanets: PropTypes.func.isRequired,
+  getVehicles: PropTypes.func.isRequired
 }
 
 export default Header;

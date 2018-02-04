@@ -52,6 +52,7 @@ const fetchPeopleDetails = (peopleArray) => {
 }
 
 const makeList = (residentsArr) => {
+  console.log(residentsArr)
   return residentsArr.map( resident => resident.name).join(', ')
 }
 

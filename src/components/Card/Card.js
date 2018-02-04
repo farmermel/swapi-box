@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../Card/Card.css';
 
 const Card = ({ data, toggleFav }) => {
@@ -17,6 +18,16 @@ const Card = ({ data, toggleFav }) => {
       <div className='bump-bottom'></div>
     </div>
   )
+}
+
+Card.propTypes = {
+  data: PropTypes.shape({
+    favorite: PropTypes.bool,
+    id: PropTypes.number,
+    type: PropTypes.string,
+    info: PropTypes.objectOf(PropTypes.string)
+  }),
+  toggleFav: PropTypes.func.isRequired
 }
 
 export default Card;
