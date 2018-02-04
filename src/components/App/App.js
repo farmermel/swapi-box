@@ -41,19 +41,15 @@ class App extends Component {
   }
 
   toggleFav = (cardData) => {
-    let stateData = [...this.state[cardData.type]];
+    let { [cardData.type]: stateData, favorites } = this.state
     stateData.forEach( item => {
       item.id === cardData.id 
       ? item.favorite = !item.favorite 
       : item;
     })
-
-    let favorites = this.state.favorites
-    if(favorites.includes(cardData)) {
-      favorites.splice(favorites.indexOf(cardData), 1)
-    } else {
-      favorites = [...favorites, cardData]
-    }
+    favorites.includes(cardData)
+    ? favorites.splice(favorites.indexOf(cardData), 1)
+    : favorites = [...favorites, cardData];
 
     this.setState({
      [cardData.type]: stateData,
