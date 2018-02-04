@@ -21,6 +21,8 @@ ShallowWrapper {
         <Header
           getPlanets={[Function]}
           getVehicles={[Function]}
+          translate={[Function]}
+          translated={false}
 />,
         <Switch>
           <Route
@@ -55,6 +57,8 @@ ShallowWrapper {
         "props": Object {
           "getPlanets": [Function],
           "getVehicles": [Function],
+          "translate": [Function],
+          "translated": false,
         },
         "ref": null,
         "rendered": null,
@@ -161,6 +165,8 @@ ShallowWrapper {
           <Header
             getPlanets={[Function]}
             getVehicles={[Function]}
+            translate={[Function]}
+            translated={false}
 />,
           <Switch>
             <Route
@@ -195,6 +201,8 @@ ShallowWrapper {
           "props": Object {
             "getPlanets": [Function],
             "getVehicles": [Function],
+            "translate": [Function],
+            "translated": false,
           },
           "ref": null,
           "rendered": null,

@@ -18,7 +18,8 @@ describe('App', () => {
       peopleData: [],
       vehicleData: [],
       planetData: [],
-      favorites: []
+      favorites: [],
+      translated: false
     }
   });
 
