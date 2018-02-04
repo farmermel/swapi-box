@@ -9,7 +9,7 @@ const Header = ({ getPlanets, getVehicles, translate }) => {
   return (
     <div className='header'>
     <button className='wookiee'
-            onClick={() => translate()}>translate</button>
+            onClick={() => translate()}>Translate</button>
     <img src={ lego }
              alt='lego brand'
              className='header-logo logo' />
