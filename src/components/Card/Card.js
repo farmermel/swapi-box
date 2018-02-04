@@ -4,7 +4,9 @@ import '../Card/Card.css';
 
 const Card = ({ data, toggleFav }) => {
   let displayItems = Object.entries(data.info).map( (item, index) => { 
-    return <p key={`${index}${item[1]}`}><span>{ item[0] }: </span>{ item[1] }</p>
+    return <p key={`${index}${item[1]}`}>
+              <span>{ item[0] }: </span>{ item[1] }
+           </p>
   })
 
   return (
