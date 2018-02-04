@@ -43,20 +43,20 @@ class App extends Component {
   }
 
   toggleFav = (cardData) => {
-    let { [cardData.type]: stateData, favorites } = this.state
+    let { [cardData.type]: stateData, favorites } = this.state;
     stateData.forEach( item => {
       item.id === cardData.id 
       ? item.favorite = !item.favorite 
       : item;
     })
     favorites.includes(cardData)
-    ? favorites.splice(favorites.indexOf(cardData), 1)
-    : favorites = [...favorites, cardData];
+      ? favorites.splice(favorites.indexOf(cardData), 1)
+      : favorites = [...favorites, cardData];
 
     this.setState({
      [cardData.type]: stateData,
      favorites
-    })
+    });
   }
 
   translateToShyriiwook = async () => {
@@ -81,7 +81,8 @@ class App extends Component {
       <div className="App">
         <Header getVehicles={ this.getVehicles }
                 getPlanets={ this.getPlanets }
-                translate={ this.translateToShyriiwook } />
+                translate={ this.translateToShyriiwook }
+                translated={ this.state.translated } />
         <Switch>
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 
