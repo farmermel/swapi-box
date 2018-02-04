@@ -1,9 +1,9 @@
 .card {
   position: relative;
   padding: 20px 10px 20px 23px;
-  margin: 5px 40px 20px;
+  margin: 15px auto;
   height: 350px;
-  width: 180px; }
+  width: 60%; }
 
 .peopleData {
   border: 6px outset #ffeb3b;
