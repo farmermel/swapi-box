@@ -8,11 +8,13 @@ $yellow: #edcd00;
 .card {
   position: relative;
   padding: 20px 10px 20px 23px;
-  // margin: 5px 40px 20px;
   margin: 15px auto;
   height: 350px;
   width: 60%
-  // width: 180px;
+}
+
+.card .favorites {
+  background-image: url('../../assets/lego-heart-notfav.png');
 }
 
 .peopleData {
@@ -61,7 +63,8 @@ $yellow: #edcd00;
 }
 
 #favd {
-  background-color: magenta;
+  background-image: url('../../assets/lego-heart.png');
+  outline: none;
 }
 
 #res-list {
