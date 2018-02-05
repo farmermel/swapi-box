@@ -5,6 +5,9 @@
   height: 350px;
   width: 60%; }
 
+.card .favorites {
+  background-image: url("../../assets/lego-heart-notfav.png"); }
+
 .peopleData {
   border: 6px outset #ffeb3b;
   background-color: #edcd00; }
@@ -42,7 +45,8 @@
   width: 35px; }
 
 #favd {
-  background-color: magenta; }
+  background-image: url("../../assets/lego-heart.png");
+  outline: none; }
 
 #res-list {
   margin: 0;

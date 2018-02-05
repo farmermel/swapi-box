@@ -198,9 +198,9 @@ const wookieData = {
     {
       info: {
         whrr: 'ohraanao waahcwhworo',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        ohrac: 'aoacwocwo aoac',
+        rcwocakoowhcwo:'rcwowo wwa',
+        rrahwhraan: 'aoacwo oorcahrrah'
       },
       favorite: false,
       type: 'vehicleData',
@@ -208,10 +208,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'hanscc oaoowhcaoahaohuaowo',
+        ohrac: 'whraan caorarc ohrarcc',
+        rcwocakoowhcwo:' aorcahanoorrro',
+        rrahwhraan: 'ra akrcworqhuwoan aorcah'
       },
       favorite: false,
       type: 'vehicleData',
@@ -219,10 +219,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'anoorrro ohrac rcwoanworacwowa',
+        ohrac: 'rhwoaoohwowowh',
+        rcwocakoowhcwo:'rawhwa ohacahoaac rcwooawoahh',
+        rrahwhraan: 'coosc rhooaoac'
       },
       favorite: false,
       type: 'vehicleData',
@@ -230,10 +230,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'owowa scahkwowa rcworaoaaoahoowhc wwr',
+        ohrac: 'oarcahaoahoac',
+        rcwocakoowhcwo:'rawhwa wwrawhc',
+        rrahwhraan: 'ra cworqhuwoan'
       },
       favorite: false,
       type: 'vehicleData',
@@ -241,10 +241,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'aorcahanoorrro rhworrrawh ahwh',
+        ohrac: 'ooww',
+        rcwocakoowhcwo:'ohahaoac aoacwo rcwoan',
+        rrahwhraan: 'aoacwo wwoorcoawo '
       },
       favorite: false,
       type: 'vehicleData',
@@ -252,10 +252,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'woracwo caorarcra',
+        ohrac: 'ohraorwowhcaoa cwo',
+        rcwocakoowhcwo:'wwahrccao',
+        rrahwhraan: 'cwohowowh wwahanscc ohwor'
       },
       favorite: false,
       type: 'vehicleData',
@@ -263,10 +263,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'wwoorc raoarawawoscro rao',
+        ohrac: 'hrarcwac ohahaoac ohah',
+        rcwocakoowhcwo:'whc rrooahwhrr',
+        rrahwhraan: 'cwo whooscahwhraaowowa'
       },
       favorite: false,
       type: 'vehicleData',
@@ -274,10 +274,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'aooo aoacwo',
+        ohrac: 'wwahrccao',
+        rcwocakoowhcwo:'wwahanscc rcwoanworacwowa',
+        rrahwhraan: 'rawhwa acrahowo rhwowowh'
       },
       favorite: false,
       type: 'vehicleData',
@@ -285,10 +285,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'aoohoo',
+        ohrac: 'oaooscscworcoaahraan',
+        rcwocakoowhcwo:'chuoaoawoccwoc ohahaoac ra',
+        rrahwhraan: 'rhook oaooscrhahwhwowa'
       },
       favorite: false,
       type: 'vehicleData',
@@ -296,10 +296,10 @@ const wookieData = {
     },
     {
       info: {
-        whrr: '',
-        ohrac: '',
-        rcwocakoowhcwo:'',
-        rrahwhraan: ''
+        whrr: 'oowwwwahoawo rcwohowo',
+        ohrac: 'whhuwo ooww',
+        rcwocakoowhcwo:'oohoworc hurhahananahoowh',
+        rrahwhraan: 'scraorahwhrr caorarc'
       },
       favorite: false,
       type: 'vehicleData',
