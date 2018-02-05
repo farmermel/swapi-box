@@ -21,9 +21,16 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <button
+          className="wookiee"
+          onClick={[Function]}
+>
+          Translate to Shyriiwook
+</button>,
         <img
           alt="lego brand"
-          className="header-logo logo"
+          className="header-logo"
+          id="logo"
           src="lego.svg"
 />,
         <div
@@ -106,8 +113,22 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "Translate to Shyriiwook",
+          "className": "wookiee",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Translate to Shyriiwook",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "alt": "lego brand",
-          "className": "header-logo logo",
+          "className": "header-logo",
+          "id": "logo",
           "src": "lego.svg",
         },
         "ref": null,
@@ -354,9 +375,16 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <button
+            className="wookiee"
+            onClick={[Function]}
+>
+            Translate to Shyriiwook
+</button>,
           <img
             alt="lego brand"
-            className="header-logo logo"
+            className="header-logo"
+            id="logo"
             src="lego.svg"
 />,
           <div
@@ -439,8 +467,22 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Translate to Shyriiwook",
+            "className": "wookiee",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Translate to Shyriiwook",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "alt": "lego brand",
-            "className": "header-logo logo",
+            "className": "header-logo",
+            "id": "logo",
             "src": "lego.svg",
           },
           "ref": null,

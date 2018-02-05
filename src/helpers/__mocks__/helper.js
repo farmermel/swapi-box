@@ -1,4 +1,6 @@
-import mockData from '../../mock-data.js'
+/*eslint-disable*/
+
+import mockData from '../../mock-data.js';
 
 const fetchMovie = jest.fn().mockImplementation( () => {
   return mockData.cleaned.film;

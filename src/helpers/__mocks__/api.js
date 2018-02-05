@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import mockData from '../mock-data.js';
 
 
