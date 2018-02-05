@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import CardContainer from '../CardContainer/CardContainer';
 import ScrollText from '../ScrollText/ScrollText';
 import swapiData from '../../helpers/helper';
-import wookieeData from '../../assets/wookiee.js'
+import wookieeData from '../../assets/wookiee.js';
 import './App.css';
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
       planetData: [],
       favorites: [],
       translated: false
-    }
+    };
   }
 
   async componentDidMount() {
@@ -46,58 +46,65 @@ class App extends Component {
     let { [cardData.type]: stateData, favorites } = this.state;
     stateData.forEach( item => {
       item.id === cardData.id 
-      ? item.favorite = !item.favorite 
-      : item;
-    })
+        ? item.favorite = !item.favorite 
+        : item;
+    });
     favorites.includes(cardData)
       ? favorites.splice(favorites.indexOf(cardData), 1)
       : favorites = [...favorites, cardData];
 
     this.setState({
-     [cardData.type]: stateData,
-     favorites
+      [cardData.type]: stateData,
+      favorites
     });
   }
 
   translateToShyriiwook = async () => {
-    let peopleData, vehicleData, planetData;
+    let movieData, peopleData, vehicleData, planetData;
     let { translated } = this.state;
-    if(translated) {
+    if (translated) {
       peopleData = await swapiData.fetchPeople();
       vehicleData = await swapiData.fetchVehicles();
       planetData = await swapiData.fetchPlanets();
+      movieData = await swapiData.fetchMovie();
     } else {
       peopleData = wookieeData.people;
       vehicleData =wookieeData.vehicles;
       planetData = wookieeData.planets;
+      movieData = wookieeData.film;
     }
     translated = !translated;
-    this.setState({ peopleData, vehicleData, planetData, translated });
+    this.setState({ movieData, 
+      peopleData, 
+      vehicleData, 
+      planetData, 
+      translated 
+    });
   }
 
   render() {
     return (
       <div className="App">
         <Header getVehicles={ this.getVehicles }
-                getPlanets={ this.getPlanets }
-                translate={ this.translateToShyriiwook }
-                translated={ this.state.translated } />
+          getPlanets={ this.getPlanets }
+          translate={ this.translateToShyriiwook }
+          translated={ this.state.translated } />
         <Switch>
           <Route path='/people' render={ () => (
             <CardContainer cardData={ this.state.peopleData } 
-                           toggleFav={ this.toggleFav } />) }>
+              toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/vehicles' render={ () => (
             <CardContainer cardData={ this.state.vehicleData } 
-                           toggleFav={ this.toggleFav } />) }>
+              toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/planets' render={ () => (
             <CardContainer cardData={ this.state.planetData } 
-                           toggleFav={ this.toggleFav } />) }>
+              toggleFav={ this.toggleFav } />) }>
           </Route>
           <Route path='/favorites' render={ () => (
             <CardContainer cardData={ this.state.favorites } 
-                           toggleFav={ this.toggleFav } />) }>
+              toggleFav={ this.toggleFav } />) }>
           </Route>
         </Switch>
         <ScrollText movieData={ this.state.movieData } />

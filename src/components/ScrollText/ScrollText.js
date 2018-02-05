@@ -15,7 +15,7 @@ const ScrollText = ({ movieData }) => {
         </div>
       </article>
     </div>
-  )
+  );
 };
 
 ScrollText.propTypes = {

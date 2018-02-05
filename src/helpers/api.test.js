@@ -15,11 +15,10 @@ describe('apiGet', () => {
   })
 
   it('throws an error if response is above 200', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-          status: 500,   
-        })
-      )
-
-     expect(apiGet('google.com')).rejects.toEqual(Error('Error retrieving Star Wars facts: Error: Bad status code'));
-    })
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 500,   
+      })
+    )
+    expect(apiGet('google.com')).rejects.toEqual(Error('Error retrieving Star Wars facts: Error: Bad status code'));
+  })
 })

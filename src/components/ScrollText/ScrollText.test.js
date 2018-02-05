@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import ScrollText from './ScrollText';
 import mockData from '../../mock-data';
@@ -10,5 +9,5 @@ describe('ScrollText', () => {
     let wrapper = shallow(<ScrollText movieData={movieData} />);
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

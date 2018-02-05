@@ -6,22 +6,23 @@ import yoda from '../../assets/yoda.png';
 import './Header.css';
 
 const Header = ({ getPlanets, getVehicles, translate, translated }) => {
-  const buttonDisplay = translated ? 'Aoawhraaowo English' : 'Translate to Shyriiwook';
+  const buttonDisplay = translated 
+    ? 'Aoawhraaowo English' 
+    : 'Translate to Shyriiwook';
 
   return (
     <div className='header'>
-    <button className='wookiee'
-            onClick={() => translate()}>{ buttonDisplay }</button>
-    <img src={ lego }
-             alt='lego brand'
-             className='header-logo'
-             id='logo' />
-      <div className='page-header'>
-        
+      <button className='wookiee'
+        onClick={() => translate()}>{ buttonDisplay }</button>
+      <img src={ lego }
+        alt='lego brand'
+        className='header-logo'
+        id='logo' />
+      <div className='page-header'>   
         <h1 className='page-title'>STAR WARS</h1>
         <img src={ yoda } 
-             alt='lego yoda'
-             className='header-logo' />
+          alt='lego yoda'
+          className='header-logo' />
       </div>
       <nav>
         <NavLink to={ {pathname: '/people'} }>
@@ -29,29 +30,29 @@ const Header = ({ getPlanets, getVehicles, translate, translated }) => {
           </button>
         </NavLink>
         <NavLink to={ {pathname: '/planets'} }
-              onClick={ getPlanets }>
+          onClick={ getPlanets }>
           <button className='planets'>
           </button>
         </NavLink>
         <NavLink to={ {pathname: '/vehicles'} }
-              onClick={ getVehicles }>
+          onClick={ getVehicles }>
           <button className='vehicles'>
           </button>
-          </NavLink>
+        </NavLink>
         <NavLink to={ {pathname: '/favorites'} }>
           <button className='favorites'>
           </button>
         </NavLink>
       </nav>
     </div>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   getPlanets: PropTypes.func.isRequired,
   getVehicles: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   translated: PropTypes.bool.isRequired
-}
+};
 
 export default Header;

@@ -1,5 +1,6 @@
+/*eslint-disable*/
+
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import CardContainer from './CardContainer';
 import mockData from '../../mock-data';
@@ -11,5 +12,5 @@ describe('CardContainer', () => {
                                 toggleFav={jest.fn()}/>);
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});
