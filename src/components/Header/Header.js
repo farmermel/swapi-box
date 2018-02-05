@@ -51,8 +51,8 @@ const Header = ({ getPlanets, getVehicles, translate, translated }) => {
 Header.propTypes = {
   getPlanets: PropTypes.func.isRequired,
   getVehicles: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired,
-  translated: PropTypes.bool.isRequired
+  translate: PropTypes.func,
+  translated: PropTypes.bool
 };
 
 export default Header;
