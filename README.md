@@ -1,4 +1,5 @@
 # Star Wars API Project
+See this project live [here](http://melenasuliteanu-lego-starwars.surge.sh/planets)
 
 ### Lego Star Wars
 
