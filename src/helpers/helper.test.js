@@ -21,10 +21,10 @@ describe('swapiData', () => {
 
   describe('cleanMovieData', () => {
     let mockMovie = mockData.films.results[0]
-    it('returns an object containing scroll, title, and date', () => {
+    it('returns an object containing scroll, title, and formatted date', () => {
       expect(swapiData.cleanMovieData(mockMovie).scroll).toBeDefined();
       expect(swapiData.cleanMovieData(mockMovie).title).toEqual("A New Hope");
-      expect(swapiData.cleanMovieData(mockMovie).date).toEqual("1977-05-25");
+      expect(swapiData.cleanMovieData(mockMovie).date).toEqual("May 25, 1977");
       expect(swapiData.cleanMovieData(mockMovie).director).not.toBeDefined();
     })
 
