@@ -6,7 +6,7 @@ const ScrollText = ({ movieData }) => {
   return (
     <div>
       <h3 className='movie-info'>
-        {movieData.title}
+        {movieData.title} <br />
         {movieData.date}
       </h3>
       <article className='scroll-container'>
