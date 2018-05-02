@@ -1,11 +1,28 @@
 import apiGet from './api.js';
 const root = 'https://swapi.co/api';
 
+const months = {
+  '01': 'January',
+  '02': 'Febuary',
+  '03': 'March',
+  '04': 'April',
+  '05': 'May',
+  '06': 'June',
+  '07': 'July',
+  '08': 'August',
+  '09': 'September',
+  '10': 'October',
+  '11': 'November',
+  '12': 'December'
+}
+
 const cleanMovieData = (movie) => {
+  const YYYYMMDD = movie.release_date.split('-');
+  const date = `${months[YYYYMMDD[1]]} ${YYYYMMDD[2]}, ${YYYYMMDD[0]}`
   return {
     scroll: movie.opening_crawl.toUpperCase(),
     title: movie.title,
-    date: movie.release_date
+    date: date
   };
 }
 
